@@ -1,6 +1,6 @@
 ;;(load "~/config-emacs/python-mode.el")
-(load "~/config-emacs/background.el")
-(load "~/config-emacs/indent.el")
+(load "~/emacs-config/background.el")
+(load "~/emacs-config/indent.el")
 
 
 ;;(display-graphic-p &optional DISPLAY)
