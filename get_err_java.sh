@@ -18,7 +18,7 @@ function exec_make() {
 		#echo $file
 		#make -C $1 $(echo $file | sed 's/.java/.class/') 2> zut.txt > /dev/null
 		javac -encoding iso-8859-1 -d $dir/bin/ -cp $dir/src/ $dir/src/$file 2> zut.txt > /dev/null
-		cat zut.txt | grep /$file | cut -d ':' -f 2
+		cat zut.txt | grep /$file | cut -d ':' -f 2 | uniq
 		exit
 	fi
 }
