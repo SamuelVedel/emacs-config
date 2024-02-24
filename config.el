@@ -1,7 +1,7 @@
 ;;(load "~/config-emacs/python-mode.el")
 (load "~/emacs-config/background.el")
 (load "~/emacs-config/indent.el")
-
+(load "~/emacs-config/comp.el")
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
@@ -14,12 +14,15 @@
   ;; si dans le terminal
   (set-background-black)
   (add-to-list 'default-frame-alist '(background-color . "#000000"))
+  (require 'mouse)
+  (xterm-mouse-mode t)
   )
 
 (setq font-lock-maximum-decoration t)
 (global-font-lock-mode t)
 (show-paren-mode)
 (add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
+(global-hl-line-mode 0)
 
 ;;-------------------------------------
 ;; Non printable character
