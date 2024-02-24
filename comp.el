@@ -66,7 +66,7 @@
         line)
     (while (< n-line m-line)
       (setq line (get-line-on-buffer buffer n-line))
-      (highligh-line (string-to-number line))
+      (highlight-line (string-to-number line))
       (setq n-line (+ n-line 1))
       )
     )
@@ -74,18 +74,35 @@
 
 (setq highlighted-lines nil)
 
-(defun highligh-line (n-line)
-  (setq line
-        (concat "^"
-                (get-line-on-buffer (current-buffer)n-line)
-                "$"))
-  (setq highlighted-lines (cons line highlighted-lines))
-  (highlight-regexp line 'isearch)
+(defun prepare-string-for-regexp (str)
+  (setq str (replace-regexp-in-string "\\\\" "\\\\\\\\" str))
+  (setq str (replace-regexp-in-string "\\*" "\\\\*" str))
+  (setq str (replace-regexp-in-string "\\+" "\\\\+" str))
+  (setq str (replace-regexp-in-string "\\$" "\\\\$" str))
+  (setq str (replace-regexp-in-string "\\^" "\\\\^" str))
+  (setq str (replace-regexp-in-string "\\." "\\\\." str))
+  (setq str (replace-regexp-in-string "\\?" "\\\\?" str))
+  (setq str (replace-regexp-in-string "\\[" "\\\\[" str))
+  (setq str (replace-regexp-in-string "\\]" "\\\\]" str))
+  (setq str (replace-regexp-in-string "\\-" "\\\\-" str))
+  )
+
+(defun highlight-line (n-line)
+  (let ((line (get-line-on-buffer (current-buffer)n-line)))
+    (setq line (prepare-string-for-regexp line))
+    (setq line
+          (concat "^"
+                  line
+                  "$"))
+    (setq highlighted-lines (cons line highlighted-lines))
+    (highlight-regexp line 'isearch)
+    )
   )
 
 (defun unhighlight-errors ()
+  (interactive)
   (if (not highlighted-lines)
-      nil
+      (message "Error highlight errased")
     (unhighlight-regexp (car highlighted-lines))
     (setq highlighted-lines (cdr highlighted-lines))
     (unhighlight-errors)
@@ -99,10 +116,32 @@
     (if (not (get-bad-lines buff))
         (message "No compilation for the mode: %s" major-mode)
       (highlight-errors buff)
+      (message "Errors highlighted")
       )
     (kill-buffer (buffer-name buff))
     )
+  ;(insert-truc highlighted-lines)
   )
+
+
+;; (defun insert-truc (truc)
+;;   (if (not truc)
+;;       nil
+;;     (insert (concat (car truc) "\n"))
+;;     (insert-truc (cdr truc))
+;;     )
+;;   )
+;;(highlight-line 99)
+;;(unhighlight-errors)
+
+;;h$e.yb*sd^e+d\fe-de[3]
+
+;;(setq format (prepare-string-for-regexp "h$e.yb*sd^e+d\\fe-de[3]"))
+
+;;(highlight-phrase format)
+;;(unhighlight-regexp format)
+
+;;highlighted-lines
 
 (global-set-key (kbd "C-c m") 'show-errors)
 (global-set-key (kbd "C-c c") 'unhighlight-errors)
