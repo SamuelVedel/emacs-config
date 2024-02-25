@@ -78,6 +78,7 @@
   )
 
 (setq highlighted-lines nil)
+(make-variable-buffer-local 'highlighted-lines)
 
 (defun prepare-string-for-regexp (str)
   (setq str (replace-regexp-in-string "\\\\" "\\\\\\\\" str))
