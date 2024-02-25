@@ -30,6 +30,11 @@
                     "~/emacs-config/get_err_java.sh "
                     (buffer-file-name (current-buffer))
                     )))
+    (if (eq major-mode 'c-mode)
+        (setq cmd (concat
+                    "~/emacs-config/get_err_c.sh "
+                    (buffer-file-name (current-buffer))
+                    )))
     (if (not cmd)
         nil
       (exec cmd buffer)
