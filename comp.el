@@ -129,6 +129,10 @@
   ;(insert-truc highlighted-lines)
   )
 
+(defun show-errors-explanation ()
+  (interactive)
+  (find-file-read-only-other-window "~/emacs-config/zut.txt")
+  )
 
 ;; (defun insert-truc (truc)
 ;;   (if (not truc)
@@ -151,3 +155,4 @@
 
 (global-set-key (kbd "C-c m") 'show-errors)
 (global-set-key (kbd "C-c c") 'unhighlight-errors)
+(global-set-key (kbd "C-c e") 'show-errors-explanation)
