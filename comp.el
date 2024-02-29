@@ -120,7 +120,7 @@
   (unhighlight-errors)
   (let ((buff (generate-new-buffer "err-lines")))
     (if (not (get-bad-lines buff))
-        (message "No compilation for the mode: %s" major-mode)
+        (message "No compilation for %s" major-mode)
       (highlight-errors buff)
       (message "%d errors highlighted" (max-line buff))
       )

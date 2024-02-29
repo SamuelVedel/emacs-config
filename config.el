@@ -2,6 +2,7 @@
 (load "~/emacs-config/background.el")
 (load "~/emacs-config/indent.el")
 (load "~/emacs-config/comp.el")
+(load "~/emacs-config/auto-comp.el")
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
