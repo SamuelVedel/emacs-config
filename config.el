@@ -24,6 +24,7 @@
 (show-paren-mode)
 (add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
 (global-hl-line-mode 0)
+(add-hook 'prog-mode-hook 'subword-mode) ;; enable camelCase
 
 ;;-------------------------------------
 ;; Non printable character
