@@ -7,6 +7,8 @@
 ;;    )
 ;;   )
 
+(setq c-bin "")
+
 (defun exec (cmd buffer)
   (save-excursion
     (set-buffer buffer)
@@ -34,6 +36,7 @@
         (setq cmd (concat
                     "~/emacs-config/get_err_c.sh "
                     (buffer-file-name (current-buffer))
+                    " " c-bin
                     )))
     (if (not cmd)
         nil
@@ -134,6 +137,17 @@
   (find-file-read-only-other-window "~/emacs-config/zut.txt")
   )
 
+(defun change-bin-folder (nc-bin)
+  (interactive "MEnter binary folder: ")
+  (if (eq major-mode 'c-mode)
+      (progn
+        (setq c-bin nc-bin)
+        (message "Change the folder for binary file in c to %s" c-bin)
+        )
+    (message "No binary folder selection for %s" major-mode)
+    )
+  )
+
 ;; (defun insert-truc (truc)
 ;;   (if (not truc)
 ;;       nil
@@ -156,3 +170,4 @@
 (global-set-key (kbd "C-c m") 'show-errors)
 (global-set-key (kbd "C-c c") 'unhighlight-errors)
 (global-set-key (kbd "C-c e") 'show-errors-explanation)
+(global-set-key (kbd "C-c b") 'change-bin-folder)
