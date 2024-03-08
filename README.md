@@ -39,7 +39,7 @@ vous rentrez `bin\`, alors la règle de Makefile appelé sera `bin\nom_fichier.o
 
 ### Autres ajouts
  - On peut utiliser la sourie lorsque emacs est ouvert dans un terminal
- - Les charactères non impimables sont afficher
+ - Les charactères non impimables sont afficher (on peut les désafficher et les réafficher avec la commande `C-c w`
  - Numérotation des lignes
  - Prise en charge du camelCase
  - Plus de coloration syntaxique pour java, c, python et javascript
