@@ -31,7 +31,7 @@
    ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9]*\\)\\."
     1
     'font-lock-type-face
-    t
+    nil
     ))
  t
  )

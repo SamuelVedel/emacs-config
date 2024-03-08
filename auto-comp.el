@@ -1,6 +1,11 @@
 ;; Ajoute de la completion automatique
 
 (defun print-completion ()
+  "
+  Insert in the buffer the name of
+  the print function. Work with java-mode
+  c-mode python-mode and js-mode
+  "
   (interactive)
   (let ((print-str nil))
     (if (eq major-mode 'java-mode)

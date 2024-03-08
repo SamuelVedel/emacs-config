@@ -10,6 +10,10 @@
 (setq c-bin "")
 
 (defun exec (cmd buffer)
+  "
+  Execute de command cmd, and
+  dump the output in the buffer in args
+  "
   (save-excursion
     (set-buffer buffer)
     (shell-command-on-region
@@ -26,6 +30,11 @@
   )
 
 (defun get-bad-lines (buffer)
+  "
+  Execute a compilation command and dump
+  the lines with errors in the buffer enter in args.
+  Work for java-mode and c-mode
+  "
   (let ((cmd nil))
     (if (eq major-mode 'java-mode)
         (setq cmd (concat
@@ -47,6 +56,9 @@
   )
 
 (defun get-line-on-buffer (buffer line)
+  "
+  Return a line of a buffer
+  "
   (save-excursion
     (set-buffer buffer)
     (goto-line line)
@@ -55,6 +67,9 @@
   )
 
 (defun max-line (buffer)
+  "
+  Return the buffer's number of line
+  "
   (save-excursion
     (set-buffer buffer)
     (let ((n-line 1))
@@ -69,6 +84,10 @@
   )
 
 (defun highlight-errors (buffer)
+  "
+  Highlight the line numbers that is write in the
+  buffer
+  "
   (let ((n-line 1)
         (m-line (max-line buffer))
         line)
@@ -97,6 +116,12 @@
   )
 
 (defun highlight-line (n-line)
+  "
+  Highlight in the current buffer
+  the line n-line with isearch face
+  and save in the highlighted-lines what
+  is highlighted
+  "
   (let ((line (get-line-on-buffer (current-buffer)n-line)))
     (setq line (prepare-string-for-regexp line))
     (setq line
@@ -109,6 +134,10 @@
   )
 
 (defun unhighlight-errors ()
+  "
+  Unhighlight errors thanks to the var
+  highlighted-lines
+  "
   (interactive)
   (if (not highlighted-lines)
       (message "Error highlight errased")
@@ -119,6 +148,10 @@
   )
 
 (defun show-errors ()
+  "
+  Compile the code and highlight errors in the buffer
+  work with java-mode and c-mode
+  "
   (interactive)
   (unhighlight-errors)
   (let ((buff (generate-new-buffer "err-lines")))
@@ -133,11 +166,20 @@
   )
 
 (defun show-errors-explanation ()
+  "
+  Open in another window the error output
+  of the lastest compilation thanks to show-errors
+  function.
+  "
   (interactive)
   (find-file-read-only-other-window "~/emacs-config/zut.txt")
   )
 
 (defun change-bin-folder (nc-bin)
+  "
+  Change the binary folder name for compilation, work with c-mode.
+  Don't forgot to the '/' ad the end of the name
+  "
   (interactive "MEnter binary folder: ")
   (if (eq major-mode 'c-mode)
       (progn
