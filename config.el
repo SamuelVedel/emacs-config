@@ -34,6 +34,17 @@
 (require 'whitespace)
 (global-whitespace-mode 1)
 
+(defun toggle-whitespace ()
+  " Toggle the display of whitespaces "
+  (interactive)
+  (if global-whitespace-mode
+      (global-whitespace-mode 0)
+    (global-whitespace-mode 1)
+    )
+  )
+
+(global-set-key (kbd "C-c w") 'toggle-whitespace)
+
 (progn
   ;; Make whitespace-mode with very basic background coloring for whitespaces.
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
