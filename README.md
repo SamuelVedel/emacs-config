@@ -45,7 +45,7 @@ vous rentrez `bin\`, alors la règle de Makefile appelé sera `bin\nom_fichier.o
  - Plus de coloration syntaxique pour java, c, python et javascript
 
 ## Comment s'en servir
-Il suffit de clone se dépot dans votre home
+Il suffit de cloner se dépot dans votre home
 et d'ajouter à votre fichier `.emacs` la ligne suivante :
 ```emacs-lisp
 (load "~/emacs-config/config.el")
