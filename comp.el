@@ -212,4 +212,4 @@
 (global-set-key (kbd "C-c m") 'show-errors)
 (global-set-key (kbd "C-c c") 'unhighlight-errors)
 (global-set-key (kbd "C-c e") 'show-errors-explanation)
-(global-set-key (kbd "C-c b") 'change-bin-folder)
+(global-set-key (kbd "C-c o") 'change-bin-folder)
