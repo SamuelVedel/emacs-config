@@ -47,6 +47,11 @@
                     (buffer-file-name (current-buffer))
                     " " c-bin
                     )))
+    (if (eq major-mode 'latex-mode)
+        (setq cmd (concat
+                   "~/emacs-config/get_err_latex.sh "
+                   (buffer-file-name (current-buffer))
+                   )))
     (if (not cmd)
         nil
       (exec cmd buffer)

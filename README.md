@@ -16,7 +16,7 @@ Il est possible de switcher en tabulation avec des espace grace au racoursis `C-
 là, la tabulation se fait avec 4 espaces.
 
 ### Compilation et affichage d'erreur
-En faisant `C-c m` en `java-mode` ou en `c-mode`, emacs va appeler un script bash qui va compiler
+En faisant `C-c m` en `java-mode`, en `c-mode` ou en `latex-mode`, emacs va appeler un script bash qui va compiler
 le code, retourner les lignes avec des erreurs, puis emacs va les surligner en rouge. Il est possible de supprimer
 la surbrillance des erreurs en tapant `C-c c`.
 
@@ -36,6 +36,9 @@ alors il l'appelle avec la règle `nom_fichier.o`. Si vous ne voulez par compile
 que le fichier `Makefile` vous pouvez avec le racoursis `C-c b` changer le doser ou sont stocké les binaires
 du mode courrant (attention à ne pas oublier le charactère `'\'` à la fin du nom du dossier). Par exemple si 
 vous rentrez `bin\`, alors la règle de Makefile appelé sera `bin\nom_fichier.o`.
+
+En latex, la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` puis l'affiche grace `evince`
+si le fichier latex compile. Sinon il surligne en rouge la première erreur.
 
 ### Autres ajouts
  - On peut utiliser la sourie lorsque emacs est ouvert dans un terminal
