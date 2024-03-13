@@ -33,9 +33,9 @@ ne vous plait pas, vous pouvez facilement la changer en modifiant le fichier `ge
 
 En c, la compilation se fait en cherchant dans les fichier parrant un fichier `Makefile`. Si il en trouve un
 alors il l'appelle avec la règle `nom_fichier.o`. Si vous ne voulez par compiler votre fichier au même endroit
-que le fichier `Makefile` vous pouvez avec le racoursis `C-c b` changer le doser ou sont stocké les binaires
-du mode courrant (attention à ne pas oublier le charactère `'\'` à la fin du nom du dossier). Par exemple si 
-vous rentrez `bin\`, alors la règle de Makefile appelé sera `bin\nom_fichier.o`.
+que le fichier `Makefile` vous pouvez avec le racoursis `C-c o` changer le dossier où sont stocké les binaires
+du mode courrant (attention à ne pas oublier le charactère `'/'` à la fin du nom du dossier). Par exemple si 
+vous rentrez `bin/`, alors la règle de Makefile appelé sera `bin/nom_fichier.o`.
 
 En latex, la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` puis l'affiche grace `evince`
 si le fichier latex compile. Sinon il surligne en rouge la première erreur.
