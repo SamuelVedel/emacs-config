@@ -1,12 +1,4 @@
 
-;; (defun exec (cmd buffer)
-;;   (async-shell-command
-;;    cmd
-;;    buffer
-;;    buffer
-;;    )
-;;   )
-
 (setq c-bin "")
 
 (defun exec (cmd buffer)
@@ -27,6 +19,14 @@
      nil
      )
   )
+  )
+
+(defun exec-async (cmd buffer)
+  (async-shell-command
+   cmd
+   buffer
+   buffer
+   )
   )
 
 (defun get-bad-lines (buffer)
@@ -152,6 +152,20 @@
     )
   )
 
+(defun open-pdf ()
+  "
+  Open with evince the file buffer-file-name but with .tex replaced by .pdf
+  if the current buffer is in latex-mode
+  "
+  (interactive)
+  (if (eq major-mode 'latex-mode)
+      (exec-async (concat "evince $(echo "(buffer-file-name (current-buffer))
+                          " | sed s/\\.tex/\\.pdf/)")
+                  nil)
+    (message "You are not in latex-mode")
+    )
+  )
+
 (defun show-errors ()
   "
   Compile the code and highlight errors in the buffer
@@ -163,11 +177,16 @@
     (if (not (get-bad-lines buff))
         (message "No compilation for %s" major-mode)
       (highlight-errors buff)
+      ;; (if (eq (max-line buff) 0)
+      ;;     ;; pas d'erreure
+      ;;     (if (eq major-mode 'latex-mode)
+      ;;         (open-tex-file)
+      ;;       )
+      ;;   )
       (message "%d errors highlighted" (max-line buff))
       )
     (kill-buffer (buffer-name buff))
     )
-  ;(insert-truc highlighted-lines)
   )
 
 (defun show-errors-explanation ()
@@ -214,7 +233,10 @@
 
 ;;highlighted-lines
 
+(add-to-list 'display-buffer-alist '("*Async Shell Command*" display-buffer-no-window (nil)))
+
 (global-set-key (kbd "C-c m") 'show-errors)
 (global-set-key (kbd "C-c c") 'unhighlight-errors)
 (global-set-key (kbd "C-c e") 'show-errors-explanation)
 (global-set-key (kbd "C-c o") 'change-bin-folder)
+(global-set-key (kbd "C-c s") 'open-pdf)

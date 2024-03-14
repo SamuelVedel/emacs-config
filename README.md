@@ -16,29 +16,17 @@ Il est possible de switcher en tabulation avec des espace grace au racoursis `C-
 là, la tabulation se fait avec 4 espaces.
 
 ### Compilation et affichage d'erreur
-En faisant `C-c m` en `java-mode`, en `c-mode` ou en `latex-mode`, emacs va appeler un script bash qui va compiler
-le code, retourner les lignes avec des erreurs, puis emacs va les surligner en rouge. Il est possible de supprimer
-la surbrillance des erreurs en tapant `C-c c`.
+En faisant `C-c m` en `java-mode`, en `c-mode` ou en `latex-mode`, emacs va appeler un script bash qui va compiler le code, retourner les lignes avec des erreurs, puis emacs va les surligner en rouge. Il est possible de supprimer la surbrillance des erreurs en tapant `C-c c`.
 
-La surbrillance des lignes se fait en surlignant les occurance d'une expression, donc si vous
-avec plusieurs lignes qui sont exactement parail, que certaines ne font pas d'erreurs de compilation
-et d'autres oui, alors elle seront quand même toutes surligner.
+La surbrillance des lignes se fait en surlignant les occurance d'une expression, donc si vous avec plusieurs lignes qui sont exactement parail, que certaines ne font pas d'erreurs de compilation et d'autres oui, alors elle seront quand même toutes surligner.
 
-A tout moment pour en connaître plus sur les erreurs afficher vous pouvais faire `C-c e` pour afficher
-dans une autre fenêtre la sortie d'erreur de la dernières compilation effecuter avec `C-c m`.
+A tout moment pour en connaître plus sur les erreurs afficher vous pouvais faire `C-c e` pour afficher dans une autre fenêtre la sortie d'erreur de la dernières compilation effecuter avec `C-c m`.
 
-En java, la compilation se fait trouvant un dossier nomé `src` dans le chemin du fichier, puis le compile
-dans un dossier nommé `bin`, la compilation se fait avec l'encodage iso-8859. Si la commande de compilation
-ne vous plait pas, vous pouvez facilement la changer en modifiant le fichier `get_err_java.sh`.
+En java, la compilation se fait trouvant un dossier nomé `src` dans le chemin du fichier, puis le compile dans un dossier nommé `bin`, la compilation se fait avec l'encodage iso-8859. Si la commande de compilation ne vous plait pas, vous pouvez facilement la changer en modifiant le fichier `get_err_java.sh`.
 
-En c, la compilation se fait en cherchant dans les fichier parrant un fichier `Makefile`. Si il en trouve un
-alors il l'appelle avec la règle `nom_fichier.o`. Si vous ne voulez par compiler votre fichier au même endroit
-que le fichier `Makefile` vous pouvez avec le racoursis `C-c o` changer le dossier où sont stocké les binaires
-du mode courrant (attention à ne pas oublier le charactère `'/'` à la fin du nom du dossier). Par exemple si 
-vous rentrez `bin/`, alors la règle de Makefile appelé sera `bin/nom_fichier.o`.
+En c, la compilation se fait en cherchant dans les fichier parrant un fichier `Makefile`. Si il en trouve un alors il l'appelle avec la règle `nom_fichier.o`. Si vous ne voulez par compiler votre fichier au même endroit que le fichier `Makefile` vous pouvez avec le racoursis `C-c o` changer le dossier où sont stocké les binaires du mode courrant (attention à ne pas oublier le charactère `'/'` à la fin du nom du dossier). Par exemple si vous rentrez `bin/`, alors la règle de Makefile appelé sera `bin/nom_fichier.o`.
 
-En latex, la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` puis l'affiche grace `evince`
-si le fichier latex compile. Sinon il surligne en rouge la première erreur.
+En latex, la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` si le fichier latex compile. Sinon il surligne en rouge la première erreur. Et on peut ouvrir le pdf avec `C-c s`.
 
 ### Autres ajouts
  - On peut utiliser la sourie lorsque emacs est ouvert dans un terminal
