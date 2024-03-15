@@ -96,7 +96,11 @@
     'font-lock-type-face
     nil
     )
-   )
+   ("\\(number\\|bigInt\\|String\\)"
+    1
+    'font-lock-type-face
+    t
+   ))
  t
  )
 

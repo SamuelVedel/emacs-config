@@ -103,4 +103,5 @@
                         ("\\.py\\'"       . python-mode)
                         ("\\.yml\\'"      . yaml-mode)
                         ("\\.lisp\\'"     . lisp-mode)
+                        ("\\.js\\'"       . js-mode)
                         ("\\.ts\\'"       . js-mode)))
