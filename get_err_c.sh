@@ -5,7 +5,7 @@ dir=$(echo $1 | rev | cut -d '/' -f 2- | rev)
 zut_file=~/emacs-config/zut.txt
 bin_file=$2
 
-if [ $bin_file = "null" ]
+if [ "$bin_file" == "null" ]
 then
 	gcc -c -Wall -Wextra -fsyntax-only $1 2> $zut_file > /dev/null
 	cat $zut_file | grep /$file | cut -d ':' -f 2 | uniq | grep "^[0-9]*$"
