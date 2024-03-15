@@ -66,9 +66,10 @@
 
 (setq auto-mode-alist '(("\\.ad[bs]\\'"   . ada-mode)
                         ("\\.awk\\'"      . awk-mode)
+                        ("\\.c\\'"        . c-mode)
                         ("\\.lex\\'"      . c-mode)
                         ("\\.[cy]\\'"     . c++-mode)
-                        ("\\.h\\'"        . c++-mode)
+                        ("\\.h\\'"        . c-mode) ;; befor it was c++-mode
                         ("\\.hxx\\'"      . c++-mode)
                         ("\\.[CH]\\'"     . c++-mode)
                         ("\\.java\\'"     . java-mode)
@@ -104,4 +105,5 @@
                         ("\\.yml\\'"      . yaml-mode)
                         ("\\.lisp\\'"     . lisp-mode)
                         ("\\.js\\'"       . js-mode)
-                        ("\\.ts\\'"       . js-mode)))
+                        ("\\.ts\\'"       . js-mode)
+                        ))

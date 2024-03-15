@@ -1,5 +1,5 @@
 
-(setq c-bin "")
+(setq c-bin "null")
 
 (defun exec (cmd buffer)
   "

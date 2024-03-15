@@ -81,7 +81,17 @@
 (font-lock-add-keywords
  'js-mode
  ;;'(("\\([a-zA-Z0-9_]+\\) *("
- '(("\\([a-z][a-zA-Z0-9]*\\) *("
+ '(("\\(type\\)"
+    1
+    'font-lock-keyword-face
+    nil
+    )
+   ("\\(number\\|bigint\\|string\\)"
+    1
+    'font-lock-type-face
+    nil
+   )
+   ("\\([a-z][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-name-face
     nil
@@ -96,16 +106,7 @@
     'font-lock-type-face
     nil
     )
-   ("\\(type\\)"
-    1
-    'font-lock-keyword-face
-    t
-    )
-   ("\\(number\\|bigint\\|String\\)"
-    1
-    'font-lock-type-face
-    t
-   ))
+   )
  t
  )
 
