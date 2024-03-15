@@ -96,7 +96,12 @@
     'font-lock-type-face
     nil
     )
-   ("\\(number\\|bigInt\\|String\\)"
+   ("\\(type\\)"
+    1
+    'font-lock-keyword-face
+    t
+    )
+   ("\\(number\\|bigint\\|String\\)"
     1
     'font-lock-type-face
     t
