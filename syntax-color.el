@@ -91,12 +91,12 @@
     'font-lock-type-face
     nil
    )
-   ("\\([a-z][a-zA-Z0-9]*\\) *("
+   ("\\([a-z_][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-name-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\)"
+   ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9]*\\)"
     1
     'font-lock-variable-name-face
     nil
