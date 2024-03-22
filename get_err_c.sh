@@ -5,10 +5,14 @@ dir=$(echo $1 | rev | cut -d '/' -f 2- | rev)
 zut_file=~/emacs-config/zut.txt
 bin_file=$2
 
+function show_lines_with_errors() {
+	cat $zut_file | grep "[/^]$file" | cut -d ':' -f 2 | uniq | grep "^[0-9]*$"
+}
+
 if [ "$bin_file" == "null" ]
 then
 	gcc -c -Wall -Wextra -fsyntax-only $1 2> $zut_file > /dev/null
-	cat $zut_file | grep /$file | cut -d ':' -f 2 | uniq | grep "^[0-9]*$"
+	show_lines_with_errors
 	exit
 fi
 
@@ -21,7 +25,7 @@ function exec_make() {
 	if [ -f $1/Makefile ]
 	then
 		make -C $1 $bin_file$(echo $file | sed 's/.c$/.o/') 2> $zut_file > /dev/null
-		cat $zut_file | grep /$file | cut -d ':' -f 2 | uniq | grep "^[0-9]*$"
+		show_lines_with_errors
 		exit
 	fi
 }
