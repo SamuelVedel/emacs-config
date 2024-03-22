@@ -33,6 +33,10 @@ A ce moment la compilation se fera en cherchant dans les dossiers parrant un fic
 Par exemple, si vous rentrer `bin/` comme dossier de compilation alors la règle de Makefile appelée sera `bin/nom_fichier.o`. Si vous voulez appellé la règle `nom_fichier.o`,
 alors il ne faut rien rentrer comme dossier de compilation. Si vous ne voulez plus produire de binaire, alors il faut entrer `null` comme dossier de compilation.
 
+#### En typescript
+En typescript `C-c m` compile avec la commande `npx tsc --noEmit --allowJs nom_fichier`, ainsi il ne produit pas de fichier à la compiliation, et il peut analyse bien que très rudimentairement les fichier js.
+On utilise `npx tsc` donc pour que la compilation fonctionne il faut que typscript soit accessible depuis le fichier.
+
 #### En LaTeX
 En latex, la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` si le fichier latex compile. Sinon il surligne en rouge la première erreur. Et on peut ouvrir le pdf avec `C-c s`.
 
