@@ -6,7 +6,7 @@ zut_file=~/emacs-config/zut.txt
 bin_file=$2
 
 function show_lines_with_errors() {
-	cat $zut_file | grep "[/^]$file" | cut -d ':' -f 2 | uniq | grep "^[0-9]*$"
+	cat $zut_file | grep "\(^\|/\)$file" | cut -d ':' -f 2 | uniq | grep "^[0-9]*$"
 }
 
 if [ "$bin_file" == "null" ]
