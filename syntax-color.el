@@ -64,7 +64,7 @@
 
 (font-lock-add-keywords
  'python-mode
- '(("\\([a-z][a-zA-Z0-9_]*\\) *("
+ '(("\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-name-face
     nil

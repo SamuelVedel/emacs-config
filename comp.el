@@ -65,6 +65,26 @@
     )
   )
 
+(defun call-clang-tidy (buffer)
+  "
+  Execute a compilation command and dump
+  the lines with errors in the buffer enter in args.
+  Work for java-mode and c-mode
+  "
+  (let ((cmd nil))
+    (if (eq major-mode 'c-mode)
+        (setq cmd (concat
+                    "~/emacs-config/clang-td-c.sh "
+                    (buffer-file-name (current-buffer))
+                    )))
+    (if (not cmd)
+        nil
+      (exec cmd buffer)
+      t
+      )
+    )
+  )
+
 (defun get-line-on-buffer (buffer line)
   "
   Return a line of a buffer
@@ -194,6 +214,22 @@
     )
   )
 
+(defun show-clang-tidy-errors ()
+  "
+  Call clang-tidy and highlight errors
+  "
+  (interactive)
+  (unhighlight-errors)
+  (let ((buff (generate-new-buffer "err-lines")))
+    (if (not (call-clang-tidy buff))
+        (message "No use of clang-tidoy for %s" major-mode)
+      (highlight-errors buff)
+      (message "%d errors highlighted" (max-line buff))
+      )
+    (kill-buffer (buffer-name buff))
+    )
+  )
+
 (defun show-errors-explanation ()
   "
   Open in another window the error output
@@ -245,3 +281,4 @@
 (global-set-key (kbd "C-c e") 'show-errors-explanation)
 (global-set-key (kbd "C-c o") 'change-bin-folder)
 (global-set-key (kbd "C-c s") 'open-pdf)
+(global-set-key (kbd "C-c t") 'show-clang-tidy-errors)
