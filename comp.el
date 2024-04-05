@@ -65,6 +65,8 @@
     )
   )
 
+(setq clang-tidy-args "")
+
 (defun call-clang-tidy (buffer)
   "
   Execute a compilation command and dump
@@ -76,7 +78,7 @@
         (setq cmd (concat
                     "~/emacs-config/clang-td-c.sh "
                     (buffer-file-name (current-buffer))
-                    )))
+                    " " clang-tidy-args)))
     (if (not cmd)
         nil
       (exec cmd buffer)
@@ -255,6 +257,15 @@
     )
   )
 
+(defun change-clang-tidy-args (args)
+  "
+  change the arguments for the clang-tidy call
+  "
+  (interactive "MEnter binary folder: ")
+  (setq clang-tidy-args args)
+  (message "Change the arguments for the clang-tidy call to %s" clang-tidy-args)
+  )
+
 ;; (defun insert-truc (truc)
 ;;   (if (not truc)
 ;;       nil
@@ -282,3 +293,4 @@
 (global-set-key (kbd "C-c o") 'change-bin-folder)
 (global-set-key (kbd "C-c s") 'open-pdf)
 (global-set-key (kbd "C-c t") 'show-clang-tidy-errors)
+(global-set-key (kbd "C-c a") 'change-clang-tidy-args)
