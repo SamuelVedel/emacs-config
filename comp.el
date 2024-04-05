@@ -204,12 +204,6 @@
     (if (not (get-bad-lines buff))
         (message "No compilation for %s" major-mode)
       (highlight-errors buff)
-      ;; (if (eq (max-line buff) 0)
-      ;;     ;; pas d'erreure
-      ;;     (if (eq major-mode 'latex-mode)
-      ;;         (open-tex-file)
-      ;;       )
-      ;;   )
       (message "%d errors highlighted" (max-line buff))
       )
     (kill-buffer (buffer-name buff))

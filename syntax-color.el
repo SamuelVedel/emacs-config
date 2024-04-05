@@ -44,11 +44,11 @@
     'font-lock-function-name-face
     nil
     )
-   ;; ("[^a-zA-Z0-9_]\\([a-zA-Z][a-zA-Z0-9_]*_t\\)[^a-zA-Z_]"
-   ;;  1
-   ;;  'font-type-variable-name-face
-   ;;  nil
-   ;;  )
+   ("[^a-zA-Z0-9_]\\([a-zA-Z][a-zA-Z0-9_]*_t\\)[^a-zA-Z_]"
+    1
+    'font-lock-type-face
+    nil
+    )
    ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9_]*\\)"
     1
     'font-lock-variable-name-face
