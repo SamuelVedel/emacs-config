@@ -95,7 +95,12 @@
     1
     'font-lock-type-face
     nil
-   )
+    )
+   ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9_]*\\)"
+    1
+    'font-lock-type-face
+    nil
+    )
    ("\\([a-z_][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-name-face
@@ -104,11 +109,6 @@
    ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9]*\\)"
     1
     'font-lock-variable-name-face
-    nil
-    )
-   ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9_]*\\)"
-    1
-    'font-lock-type-face
     nil
     )
    )
