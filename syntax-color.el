@@ -86,12 +86,12 @@
 (font-lock-add-keywords
  'js-mode
  ;;'(("\\([a-zA-Z0-9_]+\\) *("
- '(("\\(type\\)"
+ '(("\\(type\\)[^a-zA-Z0-9_]"
     1
     'font-lock-keyword-face
     nil
     )
-   ("\\(number\\|bigint\\|string\\)"
+   ("[^a-zA-Z0-9_]\\(number\\|bigint\\|string\\)[^a-zA-Z0-9_]"
     1
     'font-lock-type-face
     nil
