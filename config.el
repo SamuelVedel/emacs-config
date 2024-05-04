@@ -10,15 +10,18 @@
     (progn
       ;; si fenetrer
       (invert-face 'default) ;; dark mode
-      (set-background-dark-blue)
-      (add-to-list 'default-frame-alist '(background-color . "#171421"))
+      ;;(set-background-dark-blue)
+      ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
+      ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
+      ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
       )
   ;; si dans le terminal
-  (set-background-black)
-  (add-to-list 'default-frame-alist '(background-color . "#000000"))
+  ;;(set-background-black)
+  ;;(add-to-list 'default-frame-alist '(background-color . "#000000"))
   (require 'mouse)
   (xterm-mouse-mode t)
   )
+(set-background-black)
 
 (setq font-lock-maximum-decoration t)
 (global-font-lock-mode t)
