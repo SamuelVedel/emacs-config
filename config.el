@@ -23,7 +23,9 @@
 (setq font-lock-maximum-decoration t)
 (global-font-lock-mode t)
 (show-paren-mode)
-(add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
+;;(add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
+;;(global-display-line-numbers-mode 1)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (global-hl-line-mode 0)
 (add-hook 'prog-mode-hook 'subword-mode) ;; enable camelCase
 
