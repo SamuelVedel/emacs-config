@@ -14,6 +14,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
+      (set-frame-font "Source Code Pro 11" nil t) ;; font
       )
   ;; si dans le terminal
   ;;(set-background-black)
