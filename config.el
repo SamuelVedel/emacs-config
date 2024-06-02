@@ -33,11 +33,14 @@
 (global-hl-line-mode 0)
 (add-hook 'prog-mode-hook 'subword-mode) ;; enable camelCase
 
-;; binding for resize buffer
+;; bindings for resize buffer
 (global-set-key (kbd "C-c <up>") 'shrink-window)
 (global-set-key (kbd "C-c <down>") 'enlarge-window)
 (global-set-key (kbd "C-c <left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-c <right>") 'enlarge-window-horizontally)
+
+;; binding for toggleing truncate lines
+(global-set-key (kbd "C-c r") 'toggle-truncate-lines)
 
 ;;-------------------------------------
 ;; Non printable character
