@@ -1,5 +1,6 @@
 
 (setq c-bin "null")
+(setq latex-file "null")
 
 (defun exec (cmd buffer)
   "
@@ -51,6 +52,7 @@
         (setq cmd (concat
                    "~/emacs-config/get_err_latex.sh "
                    (buffer-file-name (current-buffer))
+                   " " latex-file
                    )))
     (if (eq major-mode 'js-mode)
         (setq cmd (concat
@@ -161,8 +163,8 @@
                   line
                   "$"))
     (setq highlighted-lines (cons line highlighted-lines))
-    (highlight-regexp line 'isearch)
-    ;;(highlight-regexp line 'error)
+    ;;(highlight-regexp line 'isearch)
+    (highlight-regexp line 'error)
     )
   )
 
@@ -187,8 +189,9 @@
   "
   (interactive)
   (if (eq major-mode 'latex-mode)
-      (exec-async (concat "evince $(echo "(buffer-file-name (current-buffer))
-                          " | sed s/\\.tex/\\.pdf/)")
+      (exec-async (concat "~/emacs-config/open_pdf.sh "
+                          (buffer-file-name (current-buffer))
+                          " " latex-file)
                   nil)
     (message "You are not in latex-mode")
     )
@@ -237,18 +240,24 @@
   (find-file-read-only-other-window "~/emacs-config/zut.txt")
   )
 
-(defun change-bin-folder (nc-bin)
+(defun change-bin-folder (n-bin)
   "
-  Change the binary folder name for compilation, work with c-mode.
+  Change the folder/file name for compilation, work with c-mode, latex-mode.
   Don't forgot to the '/' ad the end of the name
   "
-  (interactive "MEnter binary folder: ")
+  (interactive "MEnter compilation folder/file: ")
   (if (eq major-mode 'c-mode)
       (progn
-        (setq c-bin nc-bin)
+        (setq c-bin n-bin)
         (message "Change the folder for binary file in c to %s" c-bin)
         )
-    (message "No binary folder selection for %s" major-mode)
+    (if (eq major-mode 'latex-mode)
+        (progn
+          (setq latex-file n-bin)
+          (message "Change the main file in latex to %s" latex-file)
+          )
+      (message "No binary folder selection for %s" major-mode)
+      )
     )
   )
 
