@@ -2,43 +2,74 @@
 ;; Useful because color in ubuntu terminal are strange
 (require 'whitespace)
 
+(setq whitespace-on t)
+(setq whitespace-color "#c0c0c0")
+
 (defun set-whitespace-background (color)
   "Set the background color for the whitespaces characteres"
   (set-face-attribute 'whitespace-tab nil
                       :background color ;;"#222244"
                       ;;:foreground "#FFFF00"
-                      :weight 'normal)
+                      ;;:weight 'normal
+                      )
 
   (set-face-attribute 'whitespace-newline nil
                       :background color ;;"#222244"
-                      :weight 'normal)
+                      ;;:weight 'normal
+                      )
 
   (set-face-attribute 'whitespace-space nil
                       :background color
-                      :weight 'normal)
+                      ;;:weight 'normal
+                      )
   )
 
-(setq background-is-black nil)
+(defun set-whitespace-foreground (color)
+  "Set the foreground color for the whitespaces characteres"
+  (set-face-attribute 'whitespace-tab nil
+                      :foreground color
+                      )
+
+  (set-face-attribute 'whitespace-newline nil
+                      :foreground color
+                      )
+
+  (set-face-attribute 'whitespace-space nil
+                      :foreground color
+                      )
+  )
+
+(setq black-color "#000000")
+(setq dark-blue-color "#171421")
+(setq background black-color)
+
+(defun update-background ()
+  (set-background-color background)
+  (set-whitespace-background background)
+  (if (not whitespace-on)
+      (set-whitespace-foreground background)
+    (set-whitespace-foreground whitespace-color)
+    )
+  )
+
 (defun set-background (color)
   "Set the background"
-  (interactive)
-  (set-background-color color)
-  (set-whitespace-background color)
+  ;;(interactive)
+  (setq background color)
+  (update-background)
   )
 
 (defun set-background-dark-blue ()
   "Set the background to a sort of dark blue"
-  (interactive)
-  (set-background "#171421")
-  (setq background-is-black nil)
+  ;;(interactive)
+  (set-background dark-blue-color)
   (message "set background at dark blue")
   )
 
 (defun set-background-black ()
   "Set the background to black"
-  (interactive)
-  (set-background "#000000")
-  (setq background-is-black t)
+  ;;(interactive)
+  (set-background black-color)
   (message "set background at black")
   )
 
@@ -48,7 +79,7 @@
   black and dark blue
   "
   (interactive)
-  (if background-is-black
+  (if (eq background black-color)
       (set-background-dark-blue)
     (set-background-black)
     )

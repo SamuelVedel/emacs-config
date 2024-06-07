@@ -52,10 +52,11 @@
 (defun toggle-whitespace ()
   " Toggle the display of whitespaces "
   (interactive)
-  (if global-whitespace-mode
-      (global-whitespace-mode 0)
-    (global-whitespace-mode 1)
+  (if whitespace-on
+      (setq whitespace-on nil)
+    (setq whitespace-on t)
     )
+  (update-background)
   )
 
 (global-set-key (kbd "C-c w") 'toggle-whitespace)
