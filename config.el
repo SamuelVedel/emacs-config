@@ -29,11 +29,17 @@
 (show-paren-mode)
 ;;(add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
 ;;(global-display-line-numbers-mode 1)
+;; line numbering
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
-(global-hl-line-mode 0)
-(add-hook 'prog-mode-hook 'subword-mode) ;; enable camelCase
+(add-hook 'latex-mode-hook #'display-line-numbers-mode)
 
-;; bindings for resize buffer
+;; highlight current line
+;;(global-hl-line-mode 1)
+
+;; enable camelCase
+(add-hook 'prog-mode-hook 'subword-mode)
+
+;; bindings for resizing buffer
 (global-set-key (kbd "C-c <up>") 'shrink-window)
 (global-set-key (kbd "C-c <down>") 'enlarge-window)
 (global-set-key (kbd "C-c <left>") 'shrink-window-horizontally)
@@ -41,6 +47,20 @@
 
 ;; binding for toggleing truncate lines
 (global-set-key (kbd "C-c r") 'toggle-truncate-lines)
+
+;; functions and binding for scrolling manually
+(defun scroll-down-1 ()
+  (interactive)
+  (scroll-down 1)
+  )
+
+(defun scroll-up-1 ()
+  (interactive)
+  (scroll-up 1)
+  )
+
+(global-set-key (kbd "M-<up>") 'scroll-down-1)
+(global-set-key (kbd "M-<down>") 'scroll-up-1)
 
 ;;-------------------------------------
 ;; Non printable character
