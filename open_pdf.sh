@@ -10,9 +10,21 @@ then
 	file=$1
 fi
 
+function go_back() {
+	dir=$(echo $dir | rev | cut -d '/' -f 2- | rev)
+}
+
+function find_makefile() {
+	while ! [ -f $dir/Makefile ] && [ -d $dir ]
+	do
+		go_back
+	done
+}
+
 if [ $file != "Makefile" ]
 then
 	evince $(echo $file | sed "s/\.tex/\.pdf/")
 else
+	find_makefile
 	make -C $dir show
 fi
