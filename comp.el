@@ -222,7 +222,7 @@
   (unhighlight-errors)
   (let ((buff (generate-new-buffer "err-lines")))
     (if (not (call-clang-tidy buff))
-        (message "No use of clang-tidoy for %s" major-mode)
+        (message "No use of clang-tidy for %s" major-mode)
       (highlight-errors buff)
       (message "%d errors highlighted" (max-line buff))
       )
