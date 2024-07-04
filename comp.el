@@ -296,5 +296,5 @@
 (global-set-key (kbd "C-c e") 'show-errors-explanation)
 (global-set-key (kbd "C-c o") 'change-bin-folder)
 (global-set-key (kbd "C-c s") 'open-pdf)
-(global-set-key (kbd "C-c t") 'show-clang-tidy-errors)
-(global-set-key (kbd "C-c a") 'change-clang-tidy-args)
+;;(global-set-key (kbd "C-c t") 'show-clang-tidy-errors)
+;;(global-set-key (kbd "C-c a") 'change-clang-tidy-args)

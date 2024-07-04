@@ -15,12 +15,16 @@
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
       (set-frame-font "Source Code Pro 11" nil t) ;; font
+      (set-face-attribute 'default nil :height 110)
+      (tool-bar-mode -1)
+      (set-scroll-bar-mode 'left)
       )
   ;; si dans le terminal
   ;;(set-background-black)
   ;;(add-to-list 'default-frame-alist '(background-color . "#000000"))
   (require 'mouse)
   (xterm-mouse-mode t)
+  (menu-bar-mode -1)
   )
 (set-background-black)
 
@@ -32,6 +36,9 @@
 ;; line numbering
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'latex-mode-hook #'display-line-numbers-mode)
+(global-set-key (kbd "C-c t") 'speedbar)
+(column-number-mode t) ;; display column number bellow
+(size-indication-mode t) ;; display buffer size bellow
 
 ;; highlight current line
 ;;(global-hl-line-mode 1)
