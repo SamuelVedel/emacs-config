@@ -36,7 +36,7 @@
 ;; line numbering
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'latex-mode-hook #'display-line-numbers-mode)
-(global-set-key (kbd "C-c t") 'speedbar)
+(add-hook 'latex-mode-hook #'visual-line-mode)
 (column-number-mode t) ;; display column number bellow
 (size-indication-mode t) ;; display buffer size bellow
 
@@ -54,6 +54,12 @@
 
 ;; binding for toggleing truncate lines
 (global-set-key (kbd "C-c r") 'toggle-truncate-lines)
+
+;; sr-speedbar
+;; https://www.emacswiki.org/emacs/download/sr-speedbar.el
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side nil) ;; on the left side
+(global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
 
 ;; functions and binding for scrolling manually
 (defun scroll-down-1 ()
