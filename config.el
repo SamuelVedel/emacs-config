@@ -24,9 +24,9 @@
   ;;(add-to-list 'default-frame-alist '(background-color . "#000000"))
   (require 'mouse)
   (xterm-mouse-mode t)
-  (menu-bar-mode -1)
   )
 (set-background-black)
+(menu-bar-mode -1)
 
 (setq font-lock-maximum-decoration t)
 (global-font-lock-mode t)
