@@ -7,8 +7,8 @@
 ;;(set-face-attribute 'font-lock-keyword-face nil
 ;;                    :foreground "#ff8c00")
 
-(set-face-attribute 'font-lock-comment-face nil
-                    :foreground "#c0c0c0")
+;(set-face-attribute 'font-lock-comment-face nil
+;                    :foreground "#c0c0c0")
 
 (font-lock-add-keywords
  'java-mode

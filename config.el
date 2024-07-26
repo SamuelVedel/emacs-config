@@ -1,4 +1,5 @@
 ;;(load "~/config-emacs/python-mode.el")
+(load "~/emacs-config/theme.el")
 (load "~/emacs-config/background.el")
 (load "~/emacs-config/indent.el")
 (load "~/emacs-config/comp.el")
