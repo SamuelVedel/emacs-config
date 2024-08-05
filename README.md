@@ -38,7 +38,11 @@ En typescript `C-c m` compile avec la commande `npx tsc --noEmit --allowJs nom_f
 On utilise `npx tsc` donc pour que la compilation fonctionne il faut que typscript soit accessible depuis le fichier.
 
 #### En LaTeX
-En latex, la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` si le fichier latex compile. Sinon il surligne en rouge la première erreur. Et on peut ouvrir le pdf avec `C-c s`.
+En latex, par défault la commande `C-c m` compile le fichier latex deux fois avec `pdflatex` si le fichier latex compile. Sinon il surligne en rouge la première erreur. Et on peut ouvrir le pdf avec `C-c s`.
+
+On peut aussi en tapant avec le racoursis `C-c o` depuis un buffer latex modifier le fichier à compiler, si on rentre un chemin, alors il va compiler et afficher ce fichier avec les commandes `C-c m` et `C-c m`.
+Si on rentre `Makefile`, alors il va chercher un Makefile en remontant dans les fichiers et lancer la règle de base avec `C-c m` et la règle `show` avec `C-c s`.
+Et enfin si on rentre `null` alors on compile à nouveau le fichier courrant.
 
 ### Autres ajouts
  - On peut utiliser la sourie lorsque emacs est ouvert dans un terminal
