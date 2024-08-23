@@ -23,10 +23,13 @@ La surbrillance des lignes se fait en surlignant les occurance d'une expression 
 A tout moment pour en connaître plus sur les erreurs afficher vous pouvais faire `C-c e` pour afficher dans une autre fenêtre la sortie d'erreur de la dernières compilation effecuter avec `C-c m`.
 
 #### En Java
+<!--
 En java, la compilation se fait trouvant un dossier nomé `src` dans le chemin du fichier, puis le compile dans un dossier nommé `bin`, la compilation se fait avec l'encodage iso-8859. Si la commande de compilation ne vous plait pas, vous pouvez facilement la changer en modifiant le fichier `get_err_java.sh`.
+-->
+En Java `C-c m` va chercher un Makefile dans les répértoires parents, s'il en trouve un (on va appeler `makefile_path` le chemin où il à était trouvé), alors il va appelé la règle `bin/path_to_file/file.class` où `path_to_file` est le chemin depuis `makefile_path/src/` vers le fichier courrant et `file.claass` le nom du fichier courrant en remplaçant le `.java` par `.class`.
 
 #### En C
-En c, la compilation compile le fichier à l'aide de `gcc` avec les flags suivant : `-c -Wall -Wextra -fsyntax-only`. Le `-fsyntax-only` permet d'afficher les erreurs de compilation sans produire aucun fichier de compilation.
+En C, la compilation compile le fichier à l'aide de `gcc` avec les flags suivant : `-c -Wall -Wextra -fsyntax-only`. Le `-fsyntax-only` permet d'afficher les erreurs de compilation sans produire aucun fichier de compilation.
 
 Il est aussi possible de poduire un fichier `.o` après la compilation, pour cela il faut rentrer un dossier où stocké les binaires avec le racoursis `C-c o`, sans oublier le charactère `/` à la fin du nom du dossier.
 A ce moment la compilation se fera en cherchant dans les dossiers parrant un fichier `Makefile`. Si il en trouve un, alors il l'appellera avec la règle `Nom_dossierNom_fichier.o`.
