@@ -6,6 +6,15 @@
 (load "~/emacs-config/auto-comp.el")
 (load "~/emacs-config/syntax-color.el")
 
+;; uncomment if you have installed
+;; https://www.emacswiki.org/emacs/download/sr-speedbar.el
+;;(load "~/emacs-config/use-of-sr-speedbar.el")
+
+;; uncomment if you have installed
+;; https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
+;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
+;;(load "~/emacs-config/use-of-glsl-mode.el")
+
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
     (progn
@@ -15,7 +24,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
-      (set-frame-font "Source Code Pro 11" nil t) ;; font
+      ;;(set-frame-font "Source Code Pro 11" nil t) ;; font
       (set-face-attribute 'default nil :height 110)
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
@@ -55,13 +64,6 @@
 
 ;; binding for toggleing truncate lines
 (global-set-key (kbd "C-c r") 'toggle-truncate-lines)
-
-;; sr-speedbar
-;; https://www.emacswiki.org/emacs/download/sr-speedbar.el
-(require 'sr-speedbar)
-(setq sr-speedbar-right-side nil) ;; on the left side
-(setq sr-speedbar-auto-refresh nil) ;; no auto refresh
-(global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
 
 ;; functions and binding for scrolling manually
 (defun scroll-down-1 ()
@@ -106,16 +108,6 @@
 ;; Add mods
 (add-to-list 'auto-mode-alist
              '("\\.ts\\'"       . js-mode)
-             )
-
-;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
-;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
-(require 'glsl-mode)
-(add-to-list 'auto-mode-alist
-             '("\\.vert\\'"       . glsl-mode)
-             )
-(add-to-list 'auto-mode-alist
-             '("\\.frag\\'"       . glsl-mode)
              )
 
 ;;-------------------------------------
