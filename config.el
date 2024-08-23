@@ -8,11 +8,13 @@
 
 ;; uncomment if you have installed
 ;; https://www.emacswiki.org/emacs/download/sr-speedbar.el
+;; it will use and configure the sr-speedbar
 ;;(load "~/emacs-config/use-of-sr-speedbar.el")
 
 ;; uncomment if you have installed
 ;; https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
+;; it will use glsl-mode for .vert and .frag files
 ;;(load "~/emacs-config/use-of-glsl-mode.el")
 
 ;;(display-graphic-p &optional DISPLAY)
