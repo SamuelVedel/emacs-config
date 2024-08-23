@@ -40,7 +40,8 @@
   )
 
 (setq black-color "#000000")
-(setq dark-blue-color "#171421")
+;;(setq dark-blue-color "#171421")
+(setq dark-blue-color back-color-th)
 (setq background black-color)
 
 (defun update-background ()
