@@ -26,7 +26,7 @@ A tout moment pour en connaître plus sur les erreurs afficher vous pouvais fair
 <!--
 En java, la compilation se fait trouvant un dossier nomé `src` dans le chemin du fichier, puis le compile dans un dossier nommé `bin`, la compilation se fait avec l'encodage iso-8859. Si la commande de compilation ne vous plait pas, vous pouvez facilement la changer en modifiant le fichier `get_err_java.sh`.
 -->
-En Java `C-c m` va chercher un Makefile dans les répértoires parents, s'il en trouve un (on va appeler `makefile_path` le chemin où il à était trouvé), alors il va appelé la règle `bin/path_to_file/file.class` où `path_to_file` est le chemin depuis `makefile_path/src/` vers le fichier courrant et `file.claass` le nom du fichier courrant en remplaçant le `.java` par `.class`.
+En Java `C-c m` va chercher un Makefile dans les répértoires parents, s'il en trouve un (on va appeler `makefile_path` le chemin où il à était trouvé), alors il va appelé la règle `bin/path_to_file/file.class` où `path_to_file` est le chemin depuis `makefile_path/src/` vers le fichier courrant et `file.class` le nom du fichier courrant en remplaçant le `.java` par `.class`.
 
 #### En C
 En C, la compilation compile le fichier à l'aide de `gcc` avec les flags suivant : `-c -Wall -Wextra -fsyntax-only`. Le `-fsyntax-only` permet d'afficher les erreurs de compilation sans produire aucun fichier de compilation.
@@ -49,10 +49,16 @@ Et enfin si on rentre `null` alors on compile à nouveau le fichier courrant.
 
 ### Autres ajouts
  - On peut utiliser la sourie lorsque emacs est ouvert dans un terminal
- - Les charactères non impimables sont afficher (on peut les désafficher et les réafficher avec la commande `C-c w`
+ - Les charactères non imprimables sont afficher (on peut les désaffcher et les réaffcher avec la commande `C-c w`)
  - Numérotation des lignes
  - Prise en charge du camelCase
  - Plus de coloration syntaxique pour java, c, python et javascript
+ - `C-c <up>` rétrécit le buffer verticalement, `C-c <down>` agrandit le buiffer verticalement
+ - `C-c <left>` rétrécit le buffer horizontalement, `C-c <right>` agrandit le buiffer horizontalement
+ - `M-<up>` et `M-<down>` permettent de faire dériler le buffer d'une ligne
+ - `C-c r` permet d'activer et désactiver la troncation des longues lignes
+ - En `latex-mode` les lignes sont tronqué selon les mots
+ - Les fichiers qui finissent en `.ts` sont mis en `js-mode`
 
 ## Comment s'en servir
 Il suffit de cloner se dépot dans votre home :
