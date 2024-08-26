@@ -59,6 +59,7 @@ Et enfin si on rentre `null` alors on compile à nouveau le fichier courrant.
  - `C-c r` permet d'activer et désactiver la troncation des longues lignes
  - En `latex-mode` les lignes sont tronqué selon les mots
  - Les fichiers qui finissent en `.ts` sont mis en `js-mode`
+ - Le texte entre `\begin{comment}` et `\end{comment]` en `latex-mode` est considéré comme commentaire (coloration syntaxique)
 
 ## Comment s'en servir
 Il suffit de cloner se dépot dans votre home :
