@@ -115,5 +115,26 @@
  t
  )
 
+;; for block comment in latex for text between
+;; \begin{comment}
+;; and
+;; \end{comment}
+
+(defconst latex-big-comments
+  (syntax-propertize-rules
+   ("\\(\\\\\\)begin{comment}" (1 "< b"))
+   ("\\\\end{comment\\(}\\)" (1 "> b"))
+   )
+  )
+
+(add-hook 'latex-mode-hook
+           (lambda ()
+             (make-local-variable 'parse-sexp-lookup-properties)
+             (setq parse-sexp-lookup-properties t)
+             (make-local-variable 'syntax-propertize-function)
+             (setq syntax-propertize-function latex-big-comments)
+             )
+           )
+
 ;;(highlight-regexp "[a-zA-Z1-9]")
 ;;(unhighlight-regexp "[a-zA-Z1-9]")
