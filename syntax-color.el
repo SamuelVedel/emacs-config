@@ -115,26 +115,48 @@
  t
  )
 
-;; for block comment in latex for text between
-;; \begin{comment}
-;; and
-;; \end{comment}
+;; bordel ----------------------
+;; (defun my-latex-comment-region ()
+;;   "Highlight text between \\begin{comment} and \\end{comment} as comments in LaTeX mode."
+;;   (font-lock-add-keywords
+;;    nil
+;;    '(("\\(\\\\begin{comment}\\)\\(.\\|\n\\)*?\\(\\\\end{comment}\\)"
+;;       (1 font-lock-comment-face t)
+;;       (2 font-lock-comment-face t)
+;;       (3 font-lock-comment-face t)))))
 
-(defconst latex-big-comments
-  (syntax-propertize-rules
-   ("\\(\\\\\\)begin{comment}" (1 "< b"))
-   ("\\\\end{comment\\(}\\)" (1 "> b"))
-   )
-  )
+;; (add-hook 'latex-mode-hook 'my-latex-comment-region)
 
-(add-hook 'latex-mode-hook
-           (lambda ()
-             (make-local-variable 'parse-sexp-lookup-properties)
-             (setq parse-sexp-lookup-properties t)
-             (make-local-variable 'syntax-propertize-function)
-             (setq syntax-propertize-function latex-big-comments)
-             )
-           )
+;; (font-lock-add-keywords
+;;  'latex-mode
+;;  '(("\begin{comment}\\([.^$]*\\)\end{comment}"
+;;     1
+;;     'font-lock-comment-face
+;;     t
+;;     )
+;;    ("\\(haha\\)"
+;;     1
+;;     'font-lock-comment-face
+;;     t
+;;     )
+;;    ("x\\(\\(?:.\\|\n\\)*\\)x"
+;;     (1
+;;     'font-lock-comment-face
+;;     t)
+;;     )
+;;    )
+;;  t
+;;  )
+
+;; (defun my-multiline-font-lock ()
+;;   "Highlight multiline patterns in the current buffer."
+;;   (font-lock-add-keywords
+;;    nil
+;;    '(("\\(start\\(?:.\\|\n\\)*?end\\)"
+;;       (1 font-lock-keyword-face t)))))
+
+;; (add-hook 'latex-mode-hook 'my-multiline-font-lock)
+
 
 ;;(highlight-regexp "[a-zA-Z1-9]")
 ;;(unhighlight-regexp "[a-zA-Z1-9]")
