@@ -15,12 +15,12 @@
  ;;'(("\\([a-zA-Z0-9_]+\\) *("
  '(("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\) *("
     1
-    'font-lock-function-name-face
+    'font-lock-function-call-face
     nil
     )
    ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\)"
     1
-    'font-lock-variable-name-face
+    'font-lock-variable-use-face
     nil
     )
    ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)[^a-zA-Z0-9_]"
@@ -41,7 +41,7 @@
  'c-mode
  '(("\\([a-z][a-zA-Z0-9_]*\\) *("
     1
-    'font-lock-function-name-face
+    'font-lock-function-call-face
     nil
     )
    ("[^a-zA-Z0-9_]\\([a-zA-Z][a-zA-Z0-9_]*_t\\)[^a-zA-Z_]"
@@ -51,7 +51,7 @@
     )
    ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9_]*\\)"
     1
-    'font-lock-variable-name-face
+    'font-lock-variable-use-face
     nil
     )
    ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)"
@@ -66,12 +66,12 @@
  'python-mode
  '(("\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
     1
-    'font-lock-function-name-face
+    'font-lock-function-call-face
     nil
     )
    ("[^a-zA-Z0-9_]\\([a-zA-Z_][a-zA-Z0-9_]*\\)"
     1
-    'font-lock-variable-name-face
+    'font-lock-variable-use-face
     nil
     )
    ;; ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)"
@@ -103,12 +103,12 @@
     )
    ("\\([a-z_][a-zA-Z0-9]*\\) *("
     1
-    'font-lock-function-name-face
+    'font-lock-function-call-face
     nil
     )
    ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9]*\\)"
     1
-    'font-lock-variable-name-face
+    'font-lock-variable-use-face
     nil
     )
    )
