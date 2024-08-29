@@ -1,20 +1,23 @@
-;;(load "~/config-emacs/python-mode.el")
 (load "~/emacs-config/theme.el")
 (load "~/emacs-config/background.el")
 (load "~/emacs-config/indent.el")
 (load "~/emacs-config/comp.el")
 (load "~/emacs-config/auto-comp.el")
 (load "~/emacs-config/syntax-color.el")
+(load "~/emacs-config/comments.el")
 
 ;; uncomment if you have installed
 ;; https://www.emacswiki.org/emacs/download/sr-speedbar.el
 ;; it will use and configure the sr-speedbar
+;; it's a file tree, a speedbar exist natively in emacs
+;; but sr-speedbar a better version of the native one
 ;;(load "~/emacs-config/use-of-sr-speedbar.el")
 
 ;; uncomment if you have installed
 ;; https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
-;; it will use glsl-mode for .vert and .frag files
+;; it will use and configure glsl-mode,
+;; it's a programming language to write shaders (code that are executed on GPU)
 ;;(load "~/emacs-config/use-of-glsl-mode.el")
 
 ;;(display-graphic-p &optional DISPLAY)
