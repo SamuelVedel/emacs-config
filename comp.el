@@ -1,6 +1,7 @@
 
 (setq c-bin "null")
 (setq latex-file "null")
+(setq java-bin "bin")
 
 (defun exec (cmd buffer)
   "
@@ -41,6 +42,7 @@
         (setq cmd (concat
                     "~/emacs-config/get_err_java.sh "
                     (buffer-file-name (current-buffer))
+                    " " java-bin
                     )))
     (if (eq major-mode 'c-mode)
         (setq cmd (concat
@@ -256,8 +258,14 @@
           (setq latex-file n-bin)
           (message "Change the main file in latex to %s" latex-file)
           )
-      (message "No binary folder selection for %s" major-mode)
-      )
+      (if (eq major-mode 'java-mode)
+          (progn
+            (setq java-bin n-bin)
+            (message "Change the folder for binary file in java to %s" c-bin)
+            )
+        (message "No binary folder selection for %s" major-mode)
+		)
+	  )
     )
   )
 
