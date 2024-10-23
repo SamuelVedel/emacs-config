@@ -12,8 +12,11 @@
 
 (font-lock-add-keywords
  'java-mode
- ;;'(("\\([a-zA-Z0-9_]+\\) *("
- '(("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\) *("
+ '(
+   ;;("\\([a-zA-Z0-9_]+\\) *("
+   ;;("\\([a-z][a-zA-Z0-9]*\\) *("
+   ;;("[^a-zA-Z0-9_]\\(\\([a-z][a-zA-Z0-9]*\\) *(\\)+"
+   ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-call-face
     nil
@@ -108,6 +111,32 @@
     )
    ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9]*\\)"
     1
+    'font-lock-variable-use-face
+    nil
+    )
+   )
+ t
+ )
+
+(font-lock-add-keywords
+ 'emacs-lisp-mode
+ '(("(\\([a-z\\-]*\\)"
+    1
+    'font-lock-function-call-face
+    nil
+    )
+   ("[^a-z\\-]\\(nil\\)[^a-z\\-]"
+    1
+    'font-lock-keyword-face
+    nil
+    )
+   ("[^a-z\\-]\\(t\\)[^a-z\\-]"
+    1
+    'font-lock-keyword-face
+    nil
+    )
+   ("[a-z\\-]*"
+    0
     'font-lock-variable-use-face
     nil
     )
