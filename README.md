@@ -70,3 +70,12 @@ Puis d'ajouter à votre fichier `.emacs` la ligne suivante :
 ```emacs-lisp
 (load "~/emacs-config/config.el")
 ```
+
+Si jamais vous souhaité mettre la config dans un autre dossier que `~/emacs-config`, alors ce qu'il faut ajouté au `.emacs` est :
+```emacs-lisp
+(setq config-path "<path>")
+(load "<path>/config.el")
+```
+en remplacant `<path>` par le cemin vers le dossier ou se trouve cette config.  
+Cela sert aussi si l'on veut rendre cette config accessible à d'autres utilisateurs, car `~/emacs-config` est un chemin
+relatif qui ne fonctionnera pas pour d'autres utilisateurs. Il faut dans ce cas là mettre le chemin absolu à la place de `<path>` (par exemple `/home/nom/emacs-config`)
