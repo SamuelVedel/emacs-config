@@ -6,19 +6,23 @@
 (load "~/emacs-config/syntax-color.el")
 (load "~/emacs-config/comments.el")
 
-;; uncomment if you have installed
-;; https://www.emacswiki.org/emacs/download/sr-speedbar.el
+;; uncomment if you have installed sr-speedbal.el
+;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
 ;; it will use and configure the sr-speedbar
 ;; it's a file tree, a speedbar exist natively in emacs
 ;; but sr-speedbar a better version of the native one
 ;;(load "~/emacs-config/use-of-sr-speedbar.el")
 
-;; uncomment if you have installed
-;; https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
+;; uncomment if you have installed glsl-mode.el
+;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
 ;; it will use and configure glsl-mode,
 ;; it's a programming language to write shaders (code that are executed on GPU)
 ;;(load "~/emacs-config/use-of-glsl-mode.el")
+
+;; uncomment if you have installed xclip.el
+;; from https://www.emacswiki.org/emacs/xclip.el
+;;(load "~/emacs-config/use-of-xclip.el")
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
