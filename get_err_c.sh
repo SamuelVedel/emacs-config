@@ -1,8 +1,9 @@
 #!/bin/bash
 
+config_path=$(echo $0 | rev | cut -d '/' -f 2- | rev)
 file=$(echo $1 | rev | cut -d '/' -f 1 | rev)
 dir=$(echo $1 | rev | cut -d '/' -f 2- | rev)
-zut_file=~/emacs-config/zut.txt
+zut_file=$config_path/zut.txt
 bin_file=$2
 
 function show_lines_with_errors() {

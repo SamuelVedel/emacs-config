@@ -1,17 +1,19 @@
 #!/bin/bash
 
+
+config_path=$(echo $0 | rev | cut -d '/' -f 2- | rev)
 file=$(echo $1 | rev | cut -d '/' -f 1 | rev)
 dir=$(echo $1 | rev | cut -d '/' -f 2- | rev)
 bin_folder=$2
+
+# file=$(echo $1 | sed 's/\/src\//;/g' | cut -d ';' -f 2)
+# dir=$(echo $1 | sed 's/\/src\//;/g' | cut -d ';' -f 1)
+zut_file=$config_path/zut.txt
 
 function go_back() {
 	file=$(echo $dir | rev | cut -d '/' -f 1 | rev)/$file
 	dir=$(echo $dir | rev | cut -d '/' -f 2- | rev)
 }
-
-# file=$(echo $1 | sed 's/\/src\//;/g' | cut -d ';' -f 2)
-# dir=$(echo $1 | sed 's/\/src\//;/g' | cut -d ';' -f 1)
-zut_file=~/emacs-config/zut.txt
 
 function find_makefile() {
 	while ! [ -f $dir/Makefile ] && [ -d $dir ] && [ ${#dir} -gt 0 ]

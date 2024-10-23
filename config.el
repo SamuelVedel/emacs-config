@@ -1,28 +1,32 @@
-(load "~/emacs-config/theme.el")
-(load "~/emacs-config/background.el")
-(load "~/emacs-config/indent.el")
-(load "~/emacs-config/comp.el")
-(load "~/emacs-config/auto-comp.el")
-(load "~/emacs-config/syntax-color.el")
-(load "~/emacs-config/comments.el")
+(if (not (boundp 'config-path))
+    (setq config-path "~/emacs-config")
+  )
+
+(load (concat config-path "/theme.el"))
+(load (concat config-path "/background.el"))
+(load (concat config-path "/indent.el"))
+(load (concat config-path "/comp.el"))
+(load (concat config-path "/auto-comp.el"))
+(load (concat config-path "/syntax-color.el"))
+(load (concat config-path "/comments.el"))
 
 ;; uncomment if you have installed sr-speedbal.el
 ;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
 ;; it will use and configure the sr-speedbar
 ;; it's a file tree, a speedbar exist natively in emacs
 ;; but sr-speedbar a better version of the native one
-;;(load "~/emacs-config/use-of-sr-speedbar.el")
+;;(load (concat config-path "/use-of-sr-speedbar.el"))
 
 ;; uncomment if you have installed glsl-mode.el
 ;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
 ;; it will use and configure glsl-mode,
 ;; it's a programming language to write shaders (code that are executed on GPU)
-;;(load "~/emacs-config/use-of-glsl-mode.el")
+;;(load (concat config-path "/use-of-glsl-mode.el"))
 
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
-;;(load "~/emacs-config/use-of-xclip.el")
+;;(load (concat config-path "/use-of-xclip.el"))
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)

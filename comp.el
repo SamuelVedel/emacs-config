@@ -40,25 +40,25 @@
   (let ((cmd nil))
     (if (eq major-mode 'java-mode)
         (setq cmd (concat
-                    "~/emacs-config/get_err_java.sh "
+                    config-path "/get_err_java.sh "
                     (buffer-file-name (current-buffer))
                     " " java-bin
                     )))
     (if (eq major-mode 'c-mode)
         (setq cmd (concat
-                    "~/emacs-config/get_err_c.sh "
+                    config-path "/get_err_c.sh "
                     (buffer-file-name (current-buffer))
                     " " c-bin
                     )))
     (if (eq major-mode 'latex-mode)
         (setq cmd (concat
-                   "~/emacs-config/get_err_latex.sh "
+                   config-path "/get_err_latex.sh "
                    (buffer-file-name (current-buffer))
                    " " latex-file
                    )))
     (if (eq major-mode 'js-mode)
         (setq cmd (concat
-                   "~/emacs-config/get_err_ts.sh "
+                   config-path "/get_err_ts.sh "
                    (buffer-file-name (current-buffer))
                    )))
     (if (not cmd)
@@ -80,7 +80,7 @@
   (let ((cmd nil))
     (if (eq major-mode 'c-mode)
         (setq cmd (concat
-                    "~/emacs-config/clang-td-c.sh "
+                    config-path "/clang-td-c.sh "
                     (buffer-file-name (current-buffer))
                     " " clang-tidy-args)))
     (if (not cmd)
@@ -191,7 +191,7 @@
   "
   (interactive)
   (if (eq major-mode 'latex-mode)
-      (exec-async (concat "~/emacs-config/open_pdf.sh "
+      (exec-async (concat config-path "/open_pdf.sh "
                           (buffer-file-name (current-buffer))
                           " " latex-file)
                   nil)
@@ -239,7 +239,7 @@
   function.
   "
   (interactive)
-  (find-file-read-only-other-window "~/emacs-config/zut.txt")
+  (find-file-read-only-other-window (concat config-path "/zut.txt"))
   )
 
 (defun change-bin-folder (n-bin)

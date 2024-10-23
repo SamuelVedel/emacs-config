@@ -1,12 +1,13 @@
 #!/bin/bash
 
+config_path=$(echo $0 | rev | cut -d '/' -f 2- | rev)
 file=$2
 if [ $file = "null" ]
 then
 	file=$(echo $1 | rev | cut -d '/' -f 1 | rev)
 fi
 dir=$(echo $1 | rev | cut -d '/' -f 2- | rev)
-zut_file=~/emacs-config/zut.txt
+zut_file=$config_path/zut.txt
 
 function go_back() {
 	dir=$(echo $dir | rev | cut -d '/' -f 2- | rev)
