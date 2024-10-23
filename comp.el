@@ -261,7 +261,7 @@
       (if (eq major-mode 'java-mode)
           (progn
             (setq java-bin n-bin)
-            (message "Change the folder for binary file in java to %s" c-bin)
+            (message "Change the folder for binary file in java to %s" java-bin)
             )
         (message "No binary folder selection for %s" major-mode)
 		)

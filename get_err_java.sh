@@ -26,7 +26,9 @@ function exec_make() {
 		#echo $dir
 		#echo $file
 		#echo $(echo $file | sed 's/\.java$/\.class/' | sed 's/src/bin/')
-		make -C $dir $(echo $file | sed 's/\.java$/\.class/' | sed "s/src/$bin_folder/") 2> $zut_file > /dev/null
+		src_folder=$(echo $file | cut -d "/" -f 1)
+		#src_folder="src"
+		make -C $dir $(echo $file | sed 's/\.java$/\.class/' | sed "s/$src_folder/$bin_folder/") 2> $zut_file > /dev/null
 		#javac -encoding iso-8859-1 -d $dir/bin/ -cp $dir/src/ $dir/src/$file 2> $zut_file > /dev/null
 		cat $zut_file | grep $file | cut -d ':' -f 2 | uniq
 		exit
