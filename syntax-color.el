@@ -120,8 +120,8 @@
 
 (font-lock-add-keywords
  'emacs-lisp-mode
- '(("(\\([a-z\\-]*\\)"
-    1
+ '(("\\([^'](\\|^(\\)\\([a-z\\-]*\\)"
+    2
     'font-lock-function-call-face
     nil
     )
