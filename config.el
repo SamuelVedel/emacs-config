@@ -58,6 +58,10 @@
 (set-background-black)
 (menu-bar-mode -1)
 
+;; to use MELPA
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
 (setq font-lock-maximum-decoration t)
 (global-font-lock-mode t)
 (show-paren-mode)
