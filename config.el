@@ -1,4 +1,4 @@
-(if (not (boundp 'config-path))
+(if (not (boundp 'config-path)) ;; if config-path not def
     (setq config-path "~/emacs-config")
   )
 
@@ -27,6 +27,10 @@
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
 ;;(load (concat config-path "/use-of-xclip.el"))
+
+;; before discovering company, I used auto-complete
+;; so you uncomment this if you have installed auto-complete from MELPA
+;;(load (concat config-path "/use-of-auto-complete.el"))
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
