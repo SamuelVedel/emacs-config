@@ -31,6 +31,22 @@
 ;; to have a yellow scrollbar
 ;;(custom-set-faces '(company-scrollbar-fg ((t (:background "#eae19c")))))
 
+;; to make company-clang backends don't complete arguments
+(setq company-clang-insert-arguments nil)
+
+;; to make company-clang complete with args when M-RET is pressed
+(defun complete-with-args()
+  "
+  Autorise company-clang to complete args
+  then complete the selection
+  "
+  (interactive)
+  (let ((company-clang-insert-arguments t))
+    (company-complete-selection)
+    )
+  )
+(define-key company-active-map (kbd "M-RET") 'complete-with-args)
+
 ;; set company-frontends
 (setq company-frontends '(;;company-pseudo-tooltip-unless-just-one-frontend-with-delay
                           company-pseudo-tooltip-unless-just-one-frontend
