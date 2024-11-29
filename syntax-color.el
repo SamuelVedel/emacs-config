@@ -66,6 +66,38 @@
  )
 
 (font-lock-add-keywords
+ 'c++-mode
+ '(
+   ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9]*[a-zA-Z0-9][a-zA-Z0-9]*\\)[^a-zA-Z0-9_]"
+    1
+    'font-lock-type-face
+    nil
+    )
+   ("\\([a-z][a-zA-Z0-9_]*\\) *("
+    1
+    'font-lock-function-call-face
+    nil
+    )
+   ("[^a-zA-Z0-9_]\\([a-zA-Z][a-zA-Z0-9_]*_t\\)[^a-zA-Z_]"
+    1
+    'font-lock-type-face
+    nil
+    )
+   ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9_]*\\)"
+    1
+    'font-lock-variable-use-face
+    nil
+    )
+   ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)"
+    1
+    'font-lock-constant-face
+    nil
+    )
+   )
+ t
+ )
+
+(font-lock-add-keywords
  'python-mode
  '(("\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
     1

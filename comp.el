@@ -1,5 +1,6 @@
 
 (setq c-bin "null")
+(setq c++-bin "null")
 (setq latex-file "null")
 (setq java-bin "bin")
 
@@ -49,6 +50,12 @@
                     config-path "/get_err_c.sh "
                     (buffer-file-name (current-buffer))
                     " " c-bin
+                    )))
+    (if (eq major-mode 'c++-mode)
+        (setq cmd (concat
+                    config-path "/get_err_c++.sh "
+                    (buffer-file-name (current-buffer))
+                    " " c++-bin
                     )))
     (if (eq major-mode 'latex-mode)
         (setq cmd (concat
@@ -253,19 +260,25 @@
         (setq c-bin n-bin)
         (message "Change the folder for binary file in c to %s" c-bin)
         )
-    (if (eq major-mode 'latex-mode)
-        (progn
-          (setq latex-file n-bin)
-          (message "Change the main file in latex to %s" latex-file)
-          )
-      (if (eq major-mode 'java-mode)
+    (if (eq major-mode 'c++-mode)
+      (progn
+        (setq c++-bin n-bin)
+        (message "Change the folder for binary file in c to %s" c-bin)
+        )
+      (if (eq major-mode 'latex-mode)
           (progn
-            (setq java-bin n-bin)
-            (message "Change the folder for binary file in java to %s" java-bin)
+            (setq latex-file n-bin)
+            (message "Change the main file in latex to %s" latex-file)
             )
-        (message "No binary folder selection for %s" major-mode)
-		)
-	  )
+        (if (eq major-mode 'java-mode)
+            (progn
+              (setq java-bin n-bin)
+              (message "Change the folder for binary file in java to %s" java-bin)
+              )
+          (message "No binary folder selection for %s" major-mode)
+          )
+        )
+      )
     )
   )
 
