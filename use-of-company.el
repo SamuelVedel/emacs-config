@@ -8,7 +8,7 @@
 
 ;;(setq company-minimum-prefix-length 100)
 ;; completion don't start automaticaly
-(setq company-idle-delay nil)
+;;(setq company-idle-delay nil)
 ;; completion start by pressing M-n, why, because it's quick
 (global-set-key "\M-n" 'company-complete)
 

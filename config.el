@@ -9,6 +9,7 @@
 (load (concat config-path "/auto-comp.el"))
 (load (concat config-path "/syntax-color.el"))
 (load (concat config-path "/comments.el"))
+(load (concat config-path "/keybindings.el"))
 
 ;; uncomment if you have installed sr-speedbal.el
 ;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
@@ -34,6 +35,10 @@
 ;; before discovering company, I used auto-complete
 ;; so you uncomment this if you have installed auto-complete from MELPA
 ;;(load (concat config-path "/use-of-auto-complete.el"))
+
+;; uncomment if you have installed bison-mode.el
+;; form https://github.com/Wilfred/bison-mode
+;;(load (concat config-path "/use-of-bison-mode.el"))
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
@@ -79,29 +84,6 @@
 
 ;; enable camelCase
 (add-hook 'prog-mode-hook 'subword-mode)
-
-;; bindings for resizing buffer
-(global-set-key (kbd "C-c <up>") 'shrink-window)
-(global-set-key (kbd "C-c <down>") 'enlarge-window)
-(global-set-key (kbd "C-c <left>") 'shrink-window-horizontally)
-(global-set-key (kbd "C-c <right>") 'enlarge-window-horizontally)
-
-;; binding for toggleing truncate lines
-(global-set-key (kbd "C-c r") 'toggle-truncate-lines)
-
-;; functions and binding for scrolling manually
-(defun scroll-down-1 ()
-  (interactive)
-  (scroll-down 1)
-  )
-
-(defun scroll-up-1 ()
-  (interactive)
-  (scroll-up 1)
-  )
-
-(global-set-key (kbd "M-<up>") 'scroll-down-1)
-(global-set-key (kbd "M-<down>") 'scroll-up-1)
 
 ;;-------------------------------------
 ;; Non printable character
@@ -170,9 +152,8 @@
 
 ;;-------------------------------------
 ;; Add mods
-(add-to-list 'auto-mode-alist
-             '("\\.ts\\'"       . js-mode)
-             )
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
+;;(add-to-list 'auto-mode-alist '("\\.php\\'" . mhtml-mode))
 
 ;;-------------------------------------
 ;; Bordel
