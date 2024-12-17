@@ -150,6 +150,10 @@
 (global-set-key (kbd "M-<left>") 'move-text-up)
 (global-set-key (kbd "M-<right>") 'move-text-down)
 
+;; for scrolling befor the end/start of the buffer
+(setq scroll-step 1)
+(setq scroll-margin 5)
+
 ;;-------------------------------------
 ;; Add mods
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
