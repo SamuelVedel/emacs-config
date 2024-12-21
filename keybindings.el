@@ -39,3 +39,5 @@
 ;;(global-set-key (kbd "C-DEL") 'backward-kill-word)
 (global-set-key (kbd "M-a") 'backward-paragraph)
 (global-set-key (kbd "M-e") 'forward-paragraph)
+
+(global-set-key (kbd "C-c d") 'kill-whole-line)
