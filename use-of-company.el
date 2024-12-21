@@ -31,6 +31,9 @@
 ;; to have a yellow scrollbar
 ;;(custom-set-faces '(company-scrollbar-fg ((t (:background "#eae19c")))))
 
+;; to be case sensitive
+(setq company-dabbrev-downcase nil)
+
 ;; to make company-clang backends don't complete arguments
 (setq company-clang-insert-arguments nil)
 
