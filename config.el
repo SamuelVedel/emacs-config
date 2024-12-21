@@ -29,8 +29,14 @@
 ;; from https://www.emacswiki.org/emacs/xclip.el
 ;;(load (concat config-path "/use-of-xclip.el"))
 
-;; uncomment if you have installed company form MELPA
+;; uncomment if you have installed company from MELPA
 ;;(load (concat config-path "/use-of-company.el"))
+
+;; uncomment if you have installed consult from MELPA
+;;(load (concat config-path "/use-of-consult.el"))
+
+;; uncomment if you have installed marginalia from MELPA
+;;(load (concat config-path "/use-of-marginalia.el"))
 
 ;; before discovering company, I used auto-complete
 ;; so you uncomment this if you have installed auto-complete from MELPA
