@@ -10,7 +10,8 @@
 ;; completion don't start automaticaly
 ;;(setq company-idle-delay nil)
 ;; completion start by pressing M-n, why, because it's quick
-(global-set-key "\M-n" 'company-complete)
+;;(global-set-key "\M-n" 'company-complete)
+(global-set-key "\C-c \ " 'company-complete)
 
 ;; bind C-c f to complete file path
 (global-set-key (kbd "C-c f") 'company-files)

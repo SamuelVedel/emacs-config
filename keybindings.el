@@ -19,7 +19,9 @@
   )
 
 (global-set-key (kbd "M-<up>") 'scroll-down-1)
+(global-set-key (kbd "M-p") 'scroll-down-1)
 (global-set-key (kbd "M-<down>") 'scroll-up-1)
+(global-set-key (kbd "M-n") 'scroll-up-1)
 
 ;; (global-set-key (kbd "C-j") 'backward-char) ;; previous eval-print-last-sexp
 ;; (global-set-key (kbd "C-k") 'forward-char) ;; previous kill-line :(
@@ -41,3 +43,8 @@
 (global-set-key (kbd "M-e") 'forward-paragraph)
 
 (global-set-key (kbd "C-c d") 'kill-whole-line)
+
+(global-set-key (kbd "C-x <left>") 'windmove-left) ;; was prevously assigned
+(global-set-key (kbd "C-x <right>") 'windmove-right) ;; was prevously assigned
+(global-set-key (kbd "C-x <up>") 'windmove-up)
+(global-set-key (kbd "C-x <down>") 'windmove-down)
