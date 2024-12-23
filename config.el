@@ -11,13 +11,6 @@
 (load (concat config-path "/comments.el"))
 (load (concat config-path "/keybindings.el"))
 
-;; uncomment if you have installed sr-speedbal.el
-;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
-;; it will use and configure the sr-speedbar
-;; it's a file tree, a speedbar exist natively in emacs
-;; but sr-speedbar a better version of the native one
-;;(load (concat config-path "/use-of-sr-speedbar.el"))
-
 ;; uncomment if you have installed glsl-mode.el
 ;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
@@ -37,6 +30,17 @@
 
 ;; uncomment if you have installed marginalia from MELPA
 ;;(load (concat config-path "/use-of-marginalia.el"))
+
+;; uncommnet if you have installed treemacs from MELPA
+;;(load (concat config-path "/use-of-treemacs.el")
+
+;; before discovering treemacs, I used sr-speedbar
+;; so you can uncomment if you have installed sr-speedbal.el
+;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
+;; it will use and configure the sr-speedbar
+;; it's a file tree, a speedbar exist natively in emacs
+;; but sr-speedbar a better version of the native one
+;;(load (concat config-path "/use-of-sr-speedbar.el"))
 
 ;; before discovering company, I used auto-complete
 ;; so you uncomment this if you have installed auto-complete from MELPA
