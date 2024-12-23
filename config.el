@@ -20,9 +20,11 @@
 
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
+;; is it for using x11 clipboard when using terminal emacs
 ;;(load (concat config-path "/use-of-xclip.el"))
 
 ;; uncomment if you have installed company from MELPA
+;; is it for auto completion
 ;;(load (concat config-path "/use-of-company.el"))
 
 ;; uncomment if you have installed consult from MELPA
@@ -32,7 +34,8 @@
 ;;(load (concat config-path "/use-of-marginalia.el"))
 
 ;; uncommnet if you have installed treemacs from MELPA
-;;(load (concat config-path "/use-of-treemacs.el")
+;; it is for a file tree
+;;(load (concat config-path "/use-of-treemacs.el"))
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
