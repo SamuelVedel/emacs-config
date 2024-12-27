@@ -33,9 +33,17 @@
 ;; uncomment if you have installed marginalia from MELPA
 ;;(load (concat config-path "/use-of-marginalia.el"))
 
-;; uncommnet if you have installed treemacs from MELPA
+;; uncomment if you have installed treemacs from MELPA
 ;; it is for a file tree
 ;;(load (concat config-path "/use-of-treemacs.el"))
+
+;; uncomment if you have installed ace-window from MELPA
+;; it is for switching buffer in a cool way
+;;(load (concat config-path "/use-of-ace-window.el"))
+
+;; uncomment if you have installed ace-jump-mode from MELPA
+;; it is for a quick jump mode
+;;(load (concat config-path "/use-of-ace-jump-mode.el"))
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
