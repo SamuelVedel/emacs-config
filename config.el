@@ -96,7 +96,8 @@
 ;; line numbering
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'latex-mode-hook #'display-line-numbers-mode)
-(add-hook 'latex-mode-hook #'visual-line-mode)
+
+(add-hook 'latex-mode-hook #'visual-line-mode) ;; line that break smoothly in latex-mode
 (column-number-mode t) ;; display column number bellow
 (size-indication-mode t) ;; display buffer size bellow
 
