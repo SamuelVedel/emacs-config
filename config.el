@@ -180,6 +180,8 @@
 ;;-------------------------------------
 ;; Add mods
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.ypp\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.lpp\\'" . c++-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.php\\'" . mhtml-mode))
 
 ;;-------------------------------------
