@@ -48,6 +48,9 @@
 ;; uncomment if you have installed lsp-java from MELPA
 ;;(load (concat config-path "/use-of-lsp-java.el"))
 
+;; uncomment if you have installed markdown-mode from MELPA
+;;(load (concat config-path "/use-of-markdown-mode.el"))
+
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
 ;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
