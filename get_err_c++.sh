@@ -12,7 +12,7 @@ function show_lines_with_errors() {
 
 if [ "$bin_file" == "null" ]
 then
-	g++ -c -Wall -Wextra -fsyntax-only $1 2> $zut_file > /dev/null
+	g++ -std=c++11 -c -Wall -Wextra -fsyntax-only $1 2> $zut_file > /dev/null
 	show_lines_with_errors
 	exit
 fi
