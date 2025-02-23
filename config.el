@@ -62,6 +62,8 @@
 
 ;; uncomment if you have installed bison-mode.el
 ;; form https://github.com/Wilfred/bison-mode
+;; I prefere using c and c++-mode for bison
+;; but you can use this if you want
 ;;(load (concat config-path "/use-of-bison-mode.el"))
 
 ;;(display-graphic-p &optional DISPLAY)
