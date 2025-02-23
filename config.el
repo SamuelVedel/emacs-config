@@ -45,6 +45,9 @@
 ;; it is for a quick jump mode
 ;;(load (concat config-path "/use-of-ace-jump-mode.el"))
 
+;; uncomment if you have installed lsp-java from MELPA
+;;(load (concat config-path "/use-of-lsp-java.el"))
+
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
 ;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
