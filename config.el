@@ -45,11 +45,19 @@
 ;; it is for a quick jump mode
 ;;(load (concat config-path "/use-of-ace-jump-mode.el"))
 
+;; uncomment if you have installed markdown-mode from MELPA
+;;(load (concat config-path "/use-of-markdown-mode.el"))
+
+;; uncomment if you have installed lsp-mode from MELPA
+;; it is generaly installed as a dependencies for
+;; lsp-* packages
+;;(load (concat config-path "/use-of-lsp-mode.el"))
+
 ;; uncomment if you have installed lsp-java from MELPA
 ;;(load (concat config-path "/use-of-lsp-java.el"))
 
-;; uncomment if you have installed markdown-mode from MELPA
-;;(load (concat config-path "/use-of-markdown-mode.el"))
+;; uncomment if you have installed lsp-latex from MELPA
+;;(load (concat config-path "/use-of-lsp-latex.el"))
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
