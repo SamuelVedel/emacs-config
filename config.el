@@ -89,7 +89,13 @@
   (require 'mouse)
   (xterm-mouse-mode t)
   )
-(set-background-black)
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (set-background-dark-blue)
+            ))
+
+
 (menu-bar-mode -1)
 
 ;; to use MELPA
