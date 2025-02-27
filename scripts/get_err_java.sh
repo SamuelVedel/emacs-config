@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-config_path=$(echo $0 | rev | cut -d '/' -f 2- | rev)
+config_path=$(echo $0 | rev | cut -d '/' -f 3- | rev)
 file=$(echo $1 | rev | cut -d '/' -f 1 | rev)
 dir=$(echo $1 | rev | cut -d '/' -f 2- | rev)
 bin_folder=$2

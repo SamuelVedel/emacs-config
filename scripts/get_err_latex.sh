@@ -1,6 +1,6 @@
 #!/bin/bash
 
-config_path=$(echo $0 | rev | cut -d '/' -f 2- | rev)
+config_path=$(echo $0 | rev | cut -d '/' -f 3- | rev)
 file=$2
 if [ $file = "null" ]
 then

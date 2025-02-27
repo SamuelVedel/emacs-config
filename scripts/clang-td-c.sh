@@ -1,6 +1,6 @@
 #!/bin/bash
 
-config_path=$(echo $0 | rev | cut -d '/' -f 2- | rev)
+config_path=$(echo $0 | rev | cut -d '/' -f 3- | rev)
 total_path=$1
 zut_file=$config_path/zut.txt
 arg=$2

@@ -1,8 +1,9 @@
-
 (setq c-bin "null")
 (setq c++-bin "null")
 (setq latex-file "null")
 (setq java-bin "bin")
+
+(setq scripts-path (concat config-path "/scripts"))
 
 (defun exec (cmd buffer)
   "
@@ -41,31 +42,31 @@
   (let ((cmd nil))
     (if (eq major-mode 'java-mode)
         (setq cmd (concat
-                    config-path "/get_err_java.sh "
+                    scripts-path "/get_err_java.sh "
                     (buffer-file-name (current-buffer))
                     " " java-bin
                     )))
     (if (eq major-mode 'c-mode)
         (setq cmd (concat
-                    config-path "/get_err_c.sh "
+                    scripts-path "/get_err_c.sh "
                     (buffer-file-name (current-buffer))
                     " " c-bin
                     )))
     (if (eq major-mode 'c++-mode)
         (setq cmd (concat
-                    config-path "/get_err_c++.sh "
+                    scripts-path "/get_err_c++.sh "
                     (buffer-file-name (current-buffer))
                     " " c++-bin
                     )))
     (if (eq major-mode 'latex-mode)
         (setq cmd (concat
-                   config-path "/get_err_latex.sh "
+                   scripts-path "/get_err_latex.sh "
                    (buffer-file-name (current-buffer))
                    " " latex-file
                    )))
     (if (eq major-mode 'js-mode)
         (setq cmd (concat
-                   config-path "/get_err_ts.sh "
+                   scripts-path "/get_err_ts.sh "
                    (buffer-file-name (current-buffer))
                    )))
     (if (not cmd)
@@ -87,7 +88,7 @@
   (let ((cmd nil))
     (if (eq major-mode 'c-mode)
         (setq cmd (concat
-                    config-path "/clang-td-c.sh "
+                    scripts-path "/clang-td-c.sh "
                     (buffer-file-name (current-buffer))
                     " " clang-tidy-args)))
     (if (not cmd)
@@ -198,7 +199,7 @@
   "
   (interactive)
   (if (eq major-mode 'latex-mode)
-      (exec-async (concat config-path "/open_pdf.sh "
+      (exec-async (concat scripts-path "/open_pdf.sh "
                           (buffer-file-name (current-buffer))
                           " " latex-file)
                   nil)
