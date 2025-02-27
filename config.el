@@ -2,6 +2,8 @@
     (setq config-path "~/emacs-config")
   )
 
+(setq use-of-path (concat config-path "/use-of"))
+
 (load (concat config-path "/theme.el"))
 (load (concat config-path "/background.el"))
 (load (concat config-path "/indent.el"))
@@ -10,55 +12,55 @@
 (load (concat config-path "/syntax-color.el"))
 (load (concat config-path "/comments.el"))
 (load (concat config-path "/keybindings.el"))
-(load (concat config-path "/use-of-which-key.el"))
+(load (concat use-of-path "/use-of-which-key.el"))
 
 ;; uncomment if you have installed glsl-mode.el
 ;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
 ;; it will use and configure glsl-mode,
 ;; it's a programming language to write shaders (code that are executed on GPU)
-;;(load (concat config-path "/use-of-glsl-mode.el"))
+(load (concat use-of-path "/use-of-glsl-mode.el"))
 
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
 ;; is it for using x11 clipboard when using terminal emacs
-;;(load (concat config-path "/use-of-xclip.el"))
+(load (concat use-of-path "/use-of-xclip.el"))
 
 ;; uncomment if you have installed company from MELPA
 ;; is it for auto completion
-;;(load (concat config-path "/use-of-company.el"))
+(load (concat use-of-path "/use-of-company.el"))
 
 ;; uncomment if you have installed consult from MELPA
-;;(load (concat config-path "/use-of-consult.el"))
+(load (concat use-of-path "/use-of-consult.el"))
 
 ;; uncomment if you have installed marginalia from MELPA
-;;(load (concat config-path "/use-of-marginalia.el"))
+(load (concat use-of-path "/use-of-marginalia.el"))
 
 ;; uncomment if you have installed treemacs from MELPA
 ;; it is for a file tree
-;;(load (concat config-path "/use-of-treemacs.el"))
+(load (concat use-of-path "/use-of-treemacs.el"))
 
 ;; uncomment if you have installed ace-window from MELPA
 ;; it is for switching buffer in a cool way
-;;(load (concat config-path "/use-of-ace-window.el"))
+(load (concat use-of-path "/use-of-ace-window.el"))
 
 ;; uncomment if you have installed ace-jump-mode from MELPA
 ;; it is for a quick jump mode
-;;(load (concat config-path "/use-of-ace-jump-mode.el"))
+(load (concat use-of-path "/use-of-ace-jump-mode.el"))
 
 ;; uncomment if you have installed markdown-mode from MELPA
-;;(load (concat config-path "/use-of-markdown-mode.el"))
+(load (concat use-of-path "/use-of-markdown-mode.el"))
 
 ;; uncomment if you have installed lsp-mode from MELPA
 ;; it is generaly installed as a dependencies for
 ;; lsp-* packages
-;;(load (concat config-path "/use-of-lsp-mode.el"))
+(load (concat use-of-path "/use-of-lsp-mode.el"))
 
 ;; uncomment if you have installed lsp-java from MELPA
-;;(load (concat config-path "/use-of-lsp-java.el"))
+(load (concat use-of-path "/use-of-lsp-java.el"))
 
 ;; uncomment if you have installed lsp-latex from MELPA
-;;(load (concat config-path "/use-of-lsp-latex.el"))
+(load (concat use-of-path "/use-of-lsp-latex.el"))
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
@@ -66,17 +68,17 @@
 ;; it will use and configure the sr-speedbar
 ;; it's a file tree, a speedbar exist natively in emacs
 ;; but sr-speedbar a better version of the native one
-;;(load (concat config-path "/use-of-sr-speedbar.el"))
+;;(load (concat use-of-path "/use-of-sr-speedbar.el"))
 
 ;; before discovering company, I used auto-complete
 ;; so you uncomment this if you have installed auto-complete from MELPA
-;;(load (concat config-path "/use-of-auto-complete.el"))
+;;(load (concat use-of-path "/use-of-auto-complete.el"))
 
 ;; uncomment if you have installed bison-mode.el
 ;; form https://github.com/Wilfred/bison-mode
 ;; I prefere using c and c++ modes for bison
 ;; but you can use this if you want
-;;(load (concat config-path "/use-of-bison-mode.el"))
+;;(load (concat use-of-path "/use-of-bison-mode.el"))
 
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
@@ -87,7 +89,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
-      ;;(set-frame-font "Source Code Pro 11" nil t) ;; font
+      (set-frame-font "Source Code Pro 11" nil t) ;; font
       (set-face-attribute 'default nil :height 110)
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
