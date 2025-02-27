@@ -4,7 +4,7 @@
 (global-set-key (kbd "C-c <left>") 'shrink-window-horizontally)
 (global-set-key (kbd "C-c <right>") 'enlarge-window-horizontally)
 
-;; binding for toggleing truncate lines
+;; binding for toggeling truncated lines
 (global-set-key (kbd "C-c r") 'toggle-truncate-lines)
 
 ;; functions and binding for scrolling manually
