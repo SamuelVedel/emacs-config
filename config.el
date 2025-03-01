@@ -19,48 +19,48 @@
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
 ;; it will use and configure glsl-mode,
 ;; it's a programming language to write shaders (code that are executed on GPU)
-(load (concat use-of-path "/use-of-glsl-mode.el"))
+;;(load (concat use-of-path "/use-of-glsl-mode.el"))
 
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
 ;; is it for using x11 clipboard when using terminal emacs
-(load (concat use-of-path "/use-of-xclip.el"))
+;;(load (concat use-of-path "/use-of-xclip.el"))
 
 ;; uncomment if you have installed company from MELPA
 ;; is it for auto completion
-(load (concat use-of-path "/use-of-company.el"))
+;;(load (concat use-of-path "/use-of-company.el"))
 
 ;; uncomment if you have installed consult from MELPA
-(load (concat use-of-path "/use-of-consult.el"))
+;;;(load (concat use-of-path "/use-of-consult.el"))
 
 ;; uncomment if you have installed marginalia from MELPA
-(load (concat use-of-path "/use-of-marginalia.el"))
+;;(load (concat use-of-path "/use-of-marginalia.el"))
 
 ;; uncomment if you have installed treemacs from MELPA
 ;; it is for a file tree
-(load (concat use-of-path "/use-of-treemacs.el"))
+;;(load (concat use-of-path "/use-of-treemacs.el"))
 
 ;; uncomment if you have installed ace-window from MELPA
 ;; it is for switching buffer in a cool way
-(load (concat use-of-path "/use-of-ace-window.el"))
+;;(load (concat use-of-path "/use-of-ace-window.el"))
 
 ;; uncomment if you have installed ace-jump-mode from MELPA
 ;; it is for a quick jump mode
-(load (concat use-of-path "/use-of-ace-jump-mode.el"))
+;;(load (concat use-of-path "/use-of-ace-jump-mode.el"))
 
 ;; uncomment if you have installed markdown-mode from MELPA
-(load (concat use-of-path "/use-of-markdown-mode.el"))
+;;(load (concat use-of-path "/use-of-markdown-mode.el"))
 
 ;; uncomment if you have installed lsp-mode from MELPA
 ;; it is generaly installed as a dependencies for
 ;; lsp-* packages
-(load (concat use-of-path "/use-of-lsp-mode.el"))
+;;(load (concat use-of-path "/use-of-lsp-mode.el"))
 
 ;; uncomment if you have installed lsp-java from MELPA
-(load (concat use-of-path "/use-of-lsp-java.el"))
+;;(load (concat use-of-path "/use-of-lsp-java.el"))
 
 ;; uncomment if you have installed lsp-latex from MELPA
-(load (concat use-of-path "/use-of-lsp-latex.el"))
+;;(load (concat use-of-path "/use-of-lsp-latex.el"))
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
@@ -89,7 +89,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
-      (set-frame-font "Source Code Pro 11" nil t) ;; font
+      ;;(set-frame-font "Source Code Pro 11" nil t) ;; font
       (set-face-attribute 'default nil :height 110)
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
