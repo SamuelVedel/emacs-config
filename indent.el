@@ -31,5 +31,16 @@
     )
   )
 
+(defun mret ()
+  " Create an new line and indent this line "
+  (interactive)
+  (insert "\n")
+  (indent-for-tab-command)
+  )
+
 (set-indent-mode-tabs) ;; set the indentation with tabs
 (global-set-key (kbd "C-c i") 'toggle-indent-mode)
+
+;; I do that to avoid the removal of trailing whitespace
+(electric-indent-mode 0)
+(global-set-key (kbd "RET") 'mret)
