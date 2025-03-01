@@ -2,6 +2,8 @@
 
 (setq-default c-basic-offset 4) ;; set the identation as 4 spaces
 (setq-default tab-width 4) ;; display the tab with a with of 4
+;; to delete tabs in one time
+(setq backward-delete-char-untabify-method nil)
 
 (setq indent-with-tabs nil) ;; to know if the indentation is with tabs or spaces
 (defun set-indent-mode-tabs ()
@@ -21,7 +23,7 @@
   )
 
 (defun toggle-indent-mode ()
-  " Toggle the indentation between spaces and tabs"
+  " Toggle the indentation between spaces and tabs "
   (interactive)
   (if indent-with-tabs
       (set-indent-mode-spaces)
