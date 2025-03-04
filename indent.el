@@ -42,5 +42,5 @@
 (global-set-key (kbd "C-c i") 'toggle-indent-mode)
 
 ;; I do that to avoid the removal of trailing whitespace
-(global-set-key (kbd "RET") 'mret)
 ;;(electric-indent-mode 0)
+(add-hook 'prog-mode-hook (lambda() (local-set-key (kbd "RET") 'mret)))
