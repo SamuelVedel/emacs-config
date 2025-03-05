@@ -12,7 +12,6 @@
 (load (concat config-path "/syntax-color.el"))
 (load (concat config-path "/comments.el"))
 (load (concat config-path "/keybindings.el"))
-(load (concat use-of-path "/use-of-which-key.el"))
 
 ;; uncomment if you have installed glsl-mode.el
 ;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
@@ -61,6 +60,10 @@
 
 ;; uncomment if you have installed lsp-latex from MELPA
 ;;(load (concat use-of-path "/use-of-lsp-latex.el"))
+
+;; uncomment if you have installed wich-key package
+;; it is can be built-in on some emacs versions
+;;(load (concat use-of-path "/use-of-which-key.el"))
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
