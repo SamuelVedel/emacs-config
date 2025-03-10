@@ -13,3 +13,6 @@
 ;; because s-l don't work when emacs is running in a terminal
 (setq lsp-keymap-prefix "C-c l")
 (define-key lsp-mode-map (kbd "C-c l") lsp-command-map)
+
+;; disable auto formating
+(setq lsp-enable-on-type-formatting nil)
