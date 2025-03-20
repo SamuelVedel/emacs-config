@@ -174,7 +174,8 @@
                   "$"))
     (setq highlighted-lines (cons line highlighted-lines))
     ;;(highlight-regexp line 'isearch)
-    (highlight-regexp line 'error)
+    ;;(highlight-regexp line 'error)
+    (highlight-regexp line 'confusingly-reordered)
     )
   )
 
