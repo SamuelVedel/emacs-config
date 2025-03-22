@@ -12,6 +12,7 @@
 (load (concat config-path "/syntax-color.el"))
 (load (concat config-path "/comments.el"))
 (load (concat config-path "/keybindings.el"))
+(load (concat config-path "/mlng-mode.el"))
 
 ;; uncomment if you have installed glsl-mode.el
 ;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
