@@ -22,7 +22,7 @@
         
         ;; ' and " for strings
         (modify-syntax-entry ?\" "\"" st)
-        (modify-syntax-entry ?' "'" st)
+        (modify-syntax-entry ?' "\"" st)
         
         ;; // line comments
         ;; and /* */ block comments
