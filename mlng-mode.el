@@ -1,13 +1,11 @@
 ;; define mlng major mode
 
 (defconst mlng--font-lock-defaults
-  (let ((keywords '("const"))
-        (types '("int1" "int2" "int4" "int8" "flt4" "flt8" "void")))
-    '((("\\(const\\|if\\|while\\|do\\|break\\|continue\\|return\\)" 0 font-lock-keyword-face)
-       ("\\([a-z][a-z,0-9,_]*\\)\s*(" 1 font-lock-function-name-face)
-       ("\\.*\\(int1\\|int2\\|int4\\|int8\\|uint1\\|uint2\\|uint4\\|uint8\\|flt4\\|flt8\\|void\\)" 0 font-lock-type-face)
-       ("[a-z][a-z,0-9,_]*" 0 font-lock-variable-name-face)
-       ("[A-Z][A-Z,0-9,_]*" 0 font-lock-constant-face)))))
+    '((("\\<\\(const\\|if\\|while\\|do\\|break\\|continue\\|return\\)\\>" 0 font-lock-keyword-face)
+       ("\\<\\([a-z][a-z0-9_]*\\)\s*(" 1 font-lock-function-name-face)
+       ("\\.*\\(int1\\|int2\\|int4\\|int8\\|uint1\\|uint2\\|uint4\\|uint8\\|flt4\\|flt8\\|void\\)\\>" 0 font-lock-type-face)
+       ("\\<[a-z][a-z0-9_]*\\>" 0 font-lock-variable-name-face)
+       ("\\<[A-Z][A-Z0-9_]*\\>" 0 font-lock-constant-face))))
 
 (defvar mlng-mode-syntax-table
   (let ((st (make-syntax-table)))

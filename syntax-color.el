@@ -16,23 +16,23 @@
    ;;("\\([a-zA-Z0-9_]+\\) *("
    ;;("\\([a-z][a-zA-Z0-9]*\\) *("
    ;;("[^a-zA-Z0-9_]\\(\\([a-z][a-zA-Z0-9]*\\) *(\\)+"
-   ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\) *("
+   ("\\<\\([a-z][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9]*\\)"
-    1
+   ("\\<[a-z][a-zA-Z0-9]*\\>"
+    0
     'font-lock-variable-use-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)[^a-zA-Z0-9_]"
-    1
+   ("\\<[A-Z][A-Z0-9_]*\\>"
+    0
     'font-lock-constant-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9]*\\)[^a-zA-Z0-9_]"
-    1
+   ("\\<[A-Z][a-zA-Z0-9]*\\>"
+    0
     'font-lock-type-face
     nil
     )
@@ -42,24 +42,24 @@
 
 (font-lock-add-keywords
  'c-mode
- '(("\\([a-z][a-zA-Z0-9_]*\\) *("
+ '(("\\<\\([a-z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-zA-Z][a-zA-Z0-9_]*_t\\)[^a-zA-Z_]"
-    1
+   ("\\<[A-Z][A-Z0-9_]*\\>"
+    0
+    'font-lock-constant-face
+    nil
+    )
+   ("\\<[a-zA-Z][a-zA-Z0-9_]*_t\\>"
+    0
     'font-lock-type-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-z][a-zA-Z0-9_]*\\)"
-    1
+   ("\\<[a-z][a-zA-Z0-9_]*\\>"
+    0
     'font-lock-variable-use-face
-    nil
-    )
-   ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)"
-    1
-    'font-lock-constant-face
     nil
     ))
  t
@@ -68,29 +68,29 @@
 (font-lock-add-keywords
  'c++-mode
  '(
-   ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9]*[a-zA-Z0-9][a-zA-Z0-9]*\\)[^a-zA-Z0-9_]"
-    1
-    'font-lock-type-face
-    nil
-    )
-   ("\\([a-z][a-zA-Z0-9_]*\\) *("
+   ("\\<\\([a-z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-zA-Z][a-zA-Z0-9_]*_t\\)[^a-zA-Z_]"
-    1
+   ("\\<[A-Z][A-Z0-9_]*\\>"
+    0
+    'font-lock-constant-face
+    nil
+    )
+   ("\\<[A-Z][a-zA-Z0-9]*[a-zA-Z0-9][a-zA-Z0-9]*\\>"
+    0
     'font-lock-type-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9_]*\\)"
-    1
-    'font-lock-variable-use-face
+   ("\\<[a-zA-Z][a-zA-Z0-9_]*_t\\>"
+    0
+    'font-lock-type-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)"
-    1
-    'font-lock-constant-face
+   ("\\<[a-z_][a-zA-Z0-9_]*\\>"
+    0
+    'font-lock-variable-use-face
     nil
     )
    )
@@ -99,18 +99,18 @@
 
 (font-lock-add-keywords
  'python-mode
- '(("\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
+ '(("\\<\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-zA-Z_][a-zA-Z0-9_]*\\)"
-    1
+   ("\\<[a-zA-Z_][a-zA-Z0-9_]*\\>"
+    0
     'font-lock-variable-use-face
     nil
     )
-   ;; ("[^a-zA-Z0-9_]\\([A-Z][A-Z0-9_]*\\)"
-   ;;  1
+   ;; ("\\<[A-Z][A-Z0-9_]*\\>"
+   ;;  0
    ;;  'font-lock-constant-face
    ;;  nil
    ;;  )
@@ -121,28 +121,28 @@
 (font-lock-add-keywords
  'js-mode
  ;;'(("\\([a-zA-Z0-9_]+\\) *("
- '(("\\(type\\)[^a-zA-Z0-9_]"
-    1
+ '(("\\<type\\>"
+    0
     'font-lock-keyword-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\(number\\|bigint\\|string\\)[^a-zA-Z0-9_]"
-    1
+   ("\\<\\(number\\|bigint\\|string\\)\\>"
+    0
     'font-lock-type-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([A-Z][a-zA-Z0-9_]*\\)"
-    1
+   ("\\<[A-Z][a-zA-Z0-9_]*\\>"
+    0
     'font-lock-type-face
     nil
     )
-   ("\\([a-z_][a-zA-Z0-9]*\\) *("
+   ("\\<\\([a-z_][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("[^a-zA-Z0-9_]\\([a-z_][a-zA-Z0-9]*\\)"
-    1
+   ("\\<[a-z_][a-zA-Z0-9]*\\>"
+    0
     'font-lock-variable-use-face
     nil
     )
