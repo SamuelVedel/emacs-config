@@ -162,8 +162,8 @@
 (defun highlight-line (n-line)
   "
   Highlight in the current buffer
-  the line n-line with isearch face
-  and save in the highlighted-lines what
+  the line n-line and save in the
+  highlighted-lines what
   is highlighted
   "
   (let ((line (get-line-on-buffer (current-buffer)n-line)))
@@ -174,8 +174,8 @@
                   "$"))
     (setq highlighted-lines (cons line highlighted-lines))
     ;;(highlight-regexp line 'isearch)
-    ;;(highlight-regexp line 'error)
-    (highlight-regexp line 'confusingly-reordered)
+    (highlight-regexp line 'error)
+    ;;(highlight-regexp line 'confusingly-reordered)
     )
   )
 
