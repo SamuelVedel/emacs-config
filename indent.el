@@ -45,7 +45,7 @@
       '(makefile-gmake-mode))
 
 ;; I do that to avoid the removal of trailing whitespace
-(electric-indent-mode 0)
+;;(electric-indent-mode 0)
 (add-hook 'prog-mode-hook
           (lambda()
             (if (not (member major-mode unchanged-indent-mode))
