@@ -51,6 +51,10 @@
 ;; uncomment if you have installed markdown-mode from MELPA
 ;;(load (concat use-of-path "/use-of-markdown-mode.el"))
 
+;; uncomment if you have installed undo-tree from MELPA
+;; it is for good undo/redo
+;;(load (concat use-of-path "/use-of-undo-tree.el"))
+
 ;; uncomment if you have installed lsp-mode from MELPA
 ;; it is generaly installed as a dependencies for
 ;; lsp-* packages
