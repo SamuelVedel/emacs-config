@@ -3,6 +3,8 @@
 (setq latex-file "null")
 (setq java-bin "bin")
 
+(setq comp-prefix "C-c m")
+
 (setq scripts-path (concat config-path "/scripts"))
 
 (defun exec (cmd buffer)
@@ -314,10 +316,10 @@
 
 (add-to-list 'display-buffer-alist '("*Async Shell Command*" display-buffer-no-window (nil)))
 
-(global-set-key (kbd "C-c m") 'show-errors)
-(global-set-key (kbd "C-c c") 'unhighlight-errors)
-(global-set-key (kbd "C-c e") 'show-errors-explanation)
-(global-set-key (kbd "C-c o") 'change-bin-folder)
-(global-set-key (kbd "C-c s") 'open-pdf)
+(global-set-key (kbd (concat comp-prefix " m")) 'show-errors)
+(global-set-key (kbd (concat comp-prefix " c")) 'unhighlight-errors)
+(global-set-key (kbd (concat comp-prefix " e")) 'show-errors-explanation)
+(global-set-key (kbd (concat comp-prefix " o")) 'change-bin-folder)
+(global-set-key (kbd (concat comp-prefix " s")) 'open-pdf)
 ;;(global-set-key (kbd "C-c t") 'show-clang-tidy-errors)
 ;;(global-set-key (kbd "C-c a") 'change-clang-tidy-args)
