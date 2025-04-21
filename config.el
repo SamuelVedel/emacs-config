@@ -14,7 +14,7 @@
 (load (concat config-path "/keybindings.el"))
 (load (concat config-path "/mlng-mode.el"))
 
-;;;;;;;;;;;;;;; Packages that I used
+;;;;;;;;;;;;;;; Packages that I use
 
 ;; uncomment if you have installed company from MELPA
 ;; is it for auto completion
