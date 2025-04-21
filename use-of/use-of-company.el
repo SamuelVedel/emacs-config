@@ -61,3 +61,10 @@
                           company-preview-common-frontend
                           company-echo-metadata-frontend
                           ))
+
+(defun company-add-clang-include (dir)
+  (interactive "DEnter include directory")
+  (add-to-list 'company-clang-arguments (concat "-I" (expand-file-name dir)))
+  )
+
+(global-set-key (kbd (concat company-prefix-key " i")) 'company-add-clang-include)
