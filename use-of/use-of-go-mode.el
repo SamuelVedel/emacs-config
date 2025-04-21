@@ -1,0 +1,19 @@
+(font-lock-add-keywords
+ 'go-mode
+ '(("\\<\\([a-z][a-zA-Z0-9_]*\\) *("
+    1
+    'font-lock-function-call-face
+    nil
+    )
+   ("\\<[A-Z][A-Z0-9_]*\\>"
+    0
+    'font-lock-constant-face
+    nil
+    )
+   ("\\<[a-z][a-zA-Z0-9_]*\\>"
+    0
+    'font-lock-variable-use-face
+    nil
+    ))
+ t
+ )

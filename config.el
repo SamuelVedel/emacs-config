@@ -70,6 +70,9 @@
 ;; it is can be built-in on some emacs versions
 ;;(load (concat use-of-path "/use-of-which-key.el"))
 
+;; uncomment if you have installed go-mode package grom MELPA
+;;(load (concat use-of-path "/use-of-go-mode.el"))
+
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
 ;; from https://www.emacswiki.org/emacs/download/sr-speedbar.el
