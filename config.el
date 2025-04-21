@@ -108,7 +108,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
-      (set-frame-font "Source Code Pro 11" nil t) ;; font
+      ;;(set-frame-font "Source Code Pro 11" nil t) ;; font
       (set-face-attribute 'default nil :height 110)
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
