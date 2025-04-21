@@ -14,24 +14,19 @@
 (load (concat config-path "/keybindings.el"))
 (load (concat config-path "/mlng-mode.el"))
 
-;; uncomment if you have installed glsl-mode.el
-;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
-;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
-;; it will use and configure glsl-mode,
-;; it's a programming language to write shaders (code that are executed on GPU)
-;;(load (concat use-of-path "/use-of-glsl-mode.el"))
+;;;;;;;;;;;;;;; Packages that I used
+
+;; uncomment if you have installed company from MELPA
+;; is it for auto completion
+;;(load (concat use-of-path "/use-of-company.el"))
 
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
 ;; is it for using x11 clipboard when using terminal emacs
 ;;(load (concat use-of-path "/use-of-xclip.el"))
 
-;; uncomment if you have installed company from MELPA
-;; is it for auto completion
-;;(load (concat use-of-path "/use-of-company.el"))
-
 ;; uncomment if you have installed consult from MELPA
-;;;(load (concat use-of-path "/use-of-consult.el"))
+;;(load (concat use-of-path "/use-of-consult.el"))
 
 ;; uncomment if you have installed marginalia from MELPA
 ;;(load (concat use-of-path "/use-of-marginalia.el"))
@@ -48,12 +43,30 @@
 ;; it is for a quick jump mode
 ;;(load (concat use-of-path "/use-of-ace-jump-mode.el"))
 
-;; uncomment if you have installed markdown-mode from MELPA
-;;(load (concat use-of-path "/use-of-markdown-mode.el"))
-
 ;; uncomment if you have installed undo-tree from MELPA
 ;; it is for good undo/redo
 ;;(load (concat use-of-path "/use-of-undo-tree.el"))
+
+;; uncomment if you have installed wich-key package
+;; it is can be built-in on some emacs versions
+;;(load (concat use-of-path "/use-of-which-key.el"))
+
+;;;;;;;;;;;;;;; Major mode packages
+
+;; uncomment if you have installed markdown-mode from MELPA
+;;(load (concat use-of-path "/use-of-markdown-mode.el"))
+
+;; uncomment if you have installed glsl-mode.el
+;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
+;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
+;; it will use and configure glsl-mode,
+;; it's a programming language to write shaders (code that are executed on GPU)
+;;(load (concat use-of-path "/use-of-glsl-mode.el"))
+
+;; uncomment if you have installed go-mode package grom MELPA
+;;(load (concat use-of-path "/use-of-go-mode.el"))
+
+;;;;;;;;;;;;;;; lsp packages
 
 ;; uncomment if you have installed lsp-mode from MELPA
 ;; it is generaly installed as a dependencies for
@@ -66,12 +79,7 @@
 ;; uncomment if you have installed lsp-latex from MELPA
 ;;(load (concat use-of-path "/use-of-lsp-latex.el"))
 
-;; uncomment if you have installed wich-key package
-;; it is can be built-in on some emacs versions
-;;(load (concat use-of-path "/use-of-which-key.el"))
-
-;; uncomment if you have installed go-mode package grom MELPA
-;;(load (concat use-of-path "/use-of-go-mode.el"))
+;;;;;;;;;;;;;;; packages thath I don't use anymore
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
@@ -100,7 +108,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
-      ;;(set-frame-font "Source Code Pro 11" nil t) ;; font
+      (set-frame-font "Source Code Pro 11" nil t) ;; font
       (set-face-attribute 'default nil :height 110)
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
