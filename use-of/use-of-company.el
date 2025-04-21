@@ -1,5 +1,7 @@
 (global-company-mode)
 
+(setq company-prefix-key "C-c c")
+
 ;; to cycle through suggestions
 (setq company-selection-wrap-around t)
 
@@ -11,10 +13,10 @@
 ;;(setq company-idle-delay nil)
 ;; completion start by pressing M-n, why, because it's quick
 ;;(global-set-key "\M-n" 'company-complete)
-(global-set-key (kbd "C-c a") 'company-complete)
+(global-set-key (kbd (concat company-prefix-key " a")) 'company-complete)
 
 ;; bind C-c f to complete file path
-(global-set-key (kbd "C-c f") 'company-files)
+(global-set-key (kbd (concat company-prefix-key " f")) 'company-files)
 
 ;; to don't have to write something that matches a completion
 (setq company-require-match nil)
