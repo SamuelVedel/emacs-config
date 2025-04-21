@@ -40,7 +40,7 @@
             (setq print-str "std::fprintf(stderr, ")
           )))
     (if (not print-str)
-        (message "No known print function for %s" major-mode)
+        (message "No known error print function for %s" major-mode)
       (insert print-str)
       )))
 
