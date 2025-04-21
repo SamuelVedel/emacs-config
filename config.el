@@ -79,7 +79,7 @@
 ;; uncomment if you have installed lsp-latex from MELPA
 ;;(load (concat use-of-path "/use-of-lsp-latex.el"))
 
-;;;;;;;;;;;;;;; Packages thath I don't use anymore
+;;;;;;;;;;;;;;; Packages that I don't use anymore
 
 ;; before discovering treemacs, I used sr-speedbar
 ;; so you can uncomment if you have installed sr-speedbal.el
