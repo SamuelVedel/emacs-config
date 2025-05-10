@@ -152,23 +152,23 @@
 
 (font-lock-add-keywords
  'emacs-lisp-mode
- '(("\\([^'](\\|^(\\)\\([a-z-\\+]*\\)"
+ '(("\\([^'](\\|^(\\)\\([a-z-\\+][a-z1-9-\\+]*\\)"
     2
     'font-lock-function-call-face
     nil
     )
-   ("[^a-z-\\+]\\(nil\\)[^a-z-\\+]"
+   ("\\<\\(nil\\)\\>"
     1
     'font-lock-keyword-face
     nil
     )
-   ("[^a-z-\\+]\\(t\\)[^a-z-\\+]"
+   ("\\<\\(t\\)\\>"
     1
     'font-lock-keyword-face
     nil
     )
-   ("[a-z-\\+]*"
-    0
+   ("\\<\\([a-z-\\+][a-z1-9-\\+]*\\)\\>"
+    1
     'font-lock-variable-use-face
     nil
     )
