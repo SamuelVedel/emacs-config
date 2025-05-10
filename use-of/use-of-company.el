@@ -53,6 +53,13 @@
   )
 (define-key company-active-map (kbd "M-RET") 'complete-with-args)
 
+;; to be able to add include directory with company-clang
+(defun company-add-clang-include (dir)
+  (interactive "DEnter include directory")
+  (add-to-list 'company-clang-arguments (concat "-I" (expand-file-name dir)))
+  )
+(global-set-key (kbd (concat company-prefix-key " i")) 'company-add-clang-include)
+
 ;; set company-frontends
 (setq company-frontends '(;;company-pseudo-tooltip-unless-just-one-frontend-with-delay
                           company-pseudo-tooltip-unless-just-one-frontend
@@ -61,10 +68,3 @@
                           company-preview-common-frontend
                           company-echo-metadata-frontend
                           ))
-
-(defun company-add-clang-include (dir)
-  (interactive "DEnter include directory")
-  (add-to-list 'company-clang-arguments (concat "-I" (expand-file-name dir)))
-  )
-
-(global-set-key (kbd (concat company-prefix-key " i")) 'company-add-clang-include)
