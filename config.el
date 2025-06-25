@@ -163,8 +163,12 @@
   " Toggle the display of whitespaces "
   (interactive)
   (if whitespace-on
-      (setq whitespace-on nil)
+      (progn
+        (setq whitespace-on nil)
+        ;;(whitespace-mode -1)
+        )
     (setq whitespace-on t)
+    ;;(whitespace-mode 1)
     )
   (update-background)
   )
