@@ -44,6 +44,12 @@
 (setq unchanged-indent-mode
       '(makefile-gmake-mode))
 
+(add-hook 'asm-mode-hook
+          (lambda()
+            (setq c-basic-offset 8)
+            (setq tab-width 8)
+            ))
+
 ;; I do that to avoid the removal of trailing whitespace
 ;;(electric-indent-mode 0)
 (add-hook 'prog-mode-hook
