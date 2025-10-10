@@ -51,6 +51,10 @@
 ;; it is can be built-in on some emacs versions
 ;;(load (concat use-of-path "/use-of-which-key.el"))
 
+;; uncomment if you have installed diff-hl package from MELPA
+;; it is to highlights uncommitted changes on the side of the window
+;;(load (concat use-of-path "/use-of-diff-hl.el"))
+
 ;;;;;;;;;;;;;;; Major mode packages
 
 ;; uncomment if you have installed markdown-mode from MELPA
