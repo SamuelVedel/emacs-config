@@ -2,6 +2,7 @@
 (setq c++-bin "null")
 (setq latex-file "null")
 (setq java-bin "bin")
+(setq mlng-bin "null")
 
 (setq comp-prefix-key "C-c m")
 
@@ -70,6 +71,12 @@
         (setq cmd (concat
                    scripts-path "/get_err_ts.sh "
                    (buffer-file-name (current-buffer))
+                   )))
+    (if (eq major-mode 'mlng-mode)
+        (setq cmd (concat
+                   scripts-path "/get_err_mlng.sh "
+                   (buffer-file-name (current-buffer))
+                   " " mlng-bin
                    )))
     (if (not cmd)
         nil
@@ -176,8 +183,8 @@
                   "$"))
     (setq highlighted-lines (cons line highlighted-lines))
     ;;(highlight-regexp line 'isearch)
-    (highlight-regexp line 'error)
-    ;;(highlight-regexp line 'confusingly-reordered)
+    ;;(highlight-regexp line 'error)
+    (highlight-regexp line 'confusingly-reordered)
     )
   )
 
@@ -262,12 +269,12 @@
   (if (eq major-mode 'c-mode)
       (progn
         (setq c-bin n-bin)
-        (message "Change the folder for binary file in c to %s" c-bin)
+        (message "Change the folder for binaries file in c to %s" c-bin)
         )
     (if (eq major-mode 'c++-mode)
       (progn
         (setq c++-bin n-bin)
-        (message "Change the folder for binary file in c to %s" c-bin)
+        (message "Change the folder for binaries file in c to %s" c-bin)
         )
       (if (eq major-mode 'latex-mode)
           (progn
@@ -277,9 +284,15 @@
         (if (eq major-mode 'java-mode)
             (progn
               (setq java-bin n-bin)
-              (message "Change the folder for binary file in java to %s" java-bin)
+              (message "Change the folder for binaries file in java to %s" java-bin)
               )
-          (message "No binary folder selection for %s" major-mode)
+          (if (eq major-mode 'mlng-mode)
+              (progn
+                (setq mlng-bin n-bin)
+                (message "Change the folder for binaries file in mlng to %s" mlng-bin)
+                )
+            (message "No binary folder selection for %s" major-mode)
+            )
           )
         )
       )
