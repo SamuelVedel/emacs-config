@@ -154,7 +154,8 @@
 ;;(global-hl-line-mode 1)
 
 ;; enable camelCase
-(add-hook 'prog-mode-hook 'subword-mode)
+;;(add-hook 'prog-mode-hook 'subword-mode)
+(global-subword-mode 1)
 
 ;;-------------------------------------
 ;; Non printable character
