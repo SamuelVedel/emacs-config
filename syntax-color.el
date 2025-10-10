@@ -16,22 +16,22 @@
    ;;("\\([a-zA-Z0-9_]+\\) *("
    ;;("\\([a-z][a-zA-Z0-9]*\\) *("
    ;;("[^a-zA-Z0-9_]\\(\\([a-z][a-zA-Z0-9]*\\) *(\\)+"
-   ("\\<\\([a-z][a-zA-Z0-9]*\\) *("
+   ("\\_<\\([a-z][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("\\<[a-z][a-zA-Z0-9]*\\>"
+   ("\\_<[a-z][a-zA-Z0-9]*\\_>"
     0
     'font-lock-variable-use-face
     nil
     )
-   ("\\<[A-Z][A-Z0-9_]*\\>"
+   ("\\_<[A-Z][A-Z0-9_]*\\_>"
     0
     'font-lock-constant-face
     nil
     )
-   ("\\<[A-Z][a-zA-Z0-9]*\\>"
+   ("\\_<[A-Z][a-zA-Z0-9]*\\_>"
     0
     'font-lock-type-face
     nil
@@ -42,22 +42,22 @@
 
 (font-lock-add-keywords
  'c-mode
- '(("\\<\\([a-z][a-zA-Z0-9_]*\\) *("
+ '(("\\_<\\([a-z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("\\<[A-Z][A-Z0-9_]*\\>"
+   ("\\_<[A-Z][A-Z0-9_]*\\_>"
     0
     'font-lock-constant-face
     nil
     )
-   ("\\<[a-zA-Z][a-zA-Z0-9_]*_t\\>"
+   ("\\_<[a-zA-Z][a-zA-Z0-9_]*_t\\_>"
     0
     'font-lock-type-face
     nil
     )
-   ("\\<[a-z][a-zA-Z0-9_]*\\>"
+   ("\\_<[a-z][a-zA-Z0-9_]*\\_>"
     0
     'font-lock-variable-use-face
     nil
@@ -68,27 +68,27 @@
 (font-lock-add-keywords
  'c++-mode
  '(
-   ("\\<\\([a-z][a-zA-Z0-9_]*\\) *("
+   ("\\_<\\([a-z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("\\<[A-Z][A-Z0-9_]*\\>"
+   ("\\_<[A-Z][A-Z0-9_]*\\_>"
     0
     'font-lock-constant-face
     nil
     )
-   ("\\<[A-Z][a-zA-Z0-9]*[a-zA-Z0-9][a-zA-Z0-9]*\\>"
+   ("\\_<[A-Z][a-zA-Z0-9]*[a-zA-Z0-9][a-zA-Z0-9]*\\_>"
     0
     'font-lock-type-face
     nil
     )
-   ("\\<[a-zA-Z][a-zA-Z0-9_]*_t\\>"
+   ("\\_<[a-zA-Z][a-zA-Z0-9_]*_t\\_>"
     0
     'font-lock-type-face
     nil
     )
-   ("\\<[a-z_][a-zA-Z0-9_]*\\>"
+   ("\\_<[a-z_][a-zA-Z0-9_]*\\_>"
     0
     'font-lock-variable-use-face
     nil
@@ -99,17 +99,17 @@
 
 (font-lock-add-keywords
  'python-mode
- '(("\\<\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
+ '(("\\_<\\([a-zA-Z][a-zA-Z0-9_]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("\\<[a-zA-Z_][a-zA-Z0-9_]*\\>"
+   ("\\_<[a-zA-Z_][a-zA-Z0-9_]*\\_>"
     0
     'font-lock-variable-use-face
     nil
     )
-   ;; ("\\<[A-Z][A-Z0-9_]*\\>"
+   ;; ("\\_<[A-Z][A-Z0-9_]*\\_>"
    ;;  0
    ;;  'font-lock-constant-face
    ;;  nil
@@ -121,27 +121,27 @@
 (font-lock-add-keywords
  'js-mode
  ;;'(("\\([a-zA-Z0-9_]+\\) *("
- '(("\\<type\\>"
+ '(("\\_<type\\_>"
     0
     'font-lock-keyword-face
     nil
     )
-   ("\\<\\(number\\|bigint\\|string\\)\\>"
+   ("\\_<\\(number\\|bigint\\|string\\)\\_>"
     0
     'font-lock-type-face
     nil
     )
-   ("\\<[A-Z][a-zA-Z0-9_]*\\>"
+   ("\\_<[A-Z][a-zA-Z0-9_]*\\_>"
     0
     'font-lock-type-face
     nil
     )
-   ("\\<\\([a-z_][a-zA-Z0-9]*\\) *("
+   ("\\_<\\([a-z_][a-zA-Z0-9]*\\) *("
     1
     'font-lock-function-call-face
     nil
     )
-   ("\\<[a-z_][a-zA-Z0-9]*\\>"
+   ("\\_<[a-z_][a-zA-Z0-9]*\\_>"
     0
     'font-lock-variable-use-face
     nil
@@ -157,17 +157,17 @@
     'font-lock-function-call-face
     nil
     )
-   ("\\<\\(nil\\)\\>"
+   ("\\_<\\(nil\\)\\_>"
     1
     'font-lock-keyword-face
     nil
     )
-   ("\\<\\(t\\)\\>"
+   ("\\_<\\(t\\)\\_>"
     1
     'font-lock-keyword-face
     nil
     )
-   ("\\<\\([a-z-\\+][a-z1-9-\\+]*\\)\\>"
+   ("\\_<\\([a-z-\\+][a-z1-9-\\+]*\\)\\_>"
     1
     'font-lock-variable-use-face
     nil
