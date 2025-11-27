@@ -18,7 +18,8 @@
 
 ;; uncomment if you have installed company from MELPA
 ;; is it for auto completion
-;;(load (concat use-of-path "/use-of-company.el"))
+(if (package-installed-p 'company)
+    (load (concat use-of-path "/use-of-company.el")))
 
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
@@ -26,26 +27,32 @@
 ;;(load (concat use-of-path "/use-of-xclip.el"))
 
 ;; uncomment if you have installed consult from MELPA
-;;(load (concat use-of-path "/use-of-consult.el"))
+(if (package-installed-p 'consult)
+    (load (concat use-of-path "/use-of-consult.el")))
 
 ;; uncomment if you have installed marginalia from MELPA
-;;(load (concat use-of-path "/use-of-marginalia.el"))
+(if (package-installed-p 'marginalia)
+    (load (concat use-of-path "/use-of-marginalia.el")))
 
 ;; uncomment if you have installed treemacs from MELPA
 ;; it is for a file tree
-;;(load (concat use-of-path "/use-of-treemacs.el"))
+(if (package-installed-p 'treemacs)
+    (load (concat use-of-path "/use-of-treemacs.el")))
 
 ;; uncomment if you have installed ace-window from MELPA
 ;; it is for switching buffer in a cool way
-;;(load (concat use-of-path "/use-of-ace-window.el"))
+(if (package-installed-p 'ace-window)
+    (load (concat use-of-path "/use-of-ace-window.el")))
 
 ;; uncomment if you have installed ace-jump-mode from MELPA
 ;; it is for a quick jump mode
-;;(load (concat use-of-path "/use-of-ace-jump-mode.el"))
+(if (package-installed-p 'ace-jump-mode)
+    (load (concat use-of-path "/use-of-ace-jump-mode.el")))
 
 ;; uncomment if you have installed undo-tree from MELPA
 ;; it is for good undo/redo
-;;(load (concat use-of-path "/use-of-undo-tree.el"))
+(if (package-installed-p 'undo-tree)
+    (load (concat use-of-path "/use-of-undo-tree.el")))
 
 ;; uncomment if you have installed wich-key package
 ;; it is can be built-in on some emacs versions
@@ -53,12 +60,14 @@
 
 ;; uncomment if you have installed diff-hl package from MELPA
 ;; it is to highlights uncommitted changes on the side of the window
-;;(load (concat use-of-path "/use-of-diff-hl.el"))
+(if (package-installed-p 'diff-hl)
+    (load (concat use-of-path "/use-of-diff-hl.el")))
 
 ;;;;;;;;;;;;;;; Major mode packages
 
 ;; uncomment if you have installed markdown-mode from MELPA
-;;(load (concat use-of-path "/use-of-markdown-mode.el"))
+(if (package-installed-p 'markdown-mode)
+    (load (concat use-of-path "/use-of-markdown-mode.el")))
 
 ;; uncomment if you have installed glsl-mode.el
 ;; from https://raw.githubusercontent.com/jimhourihan/glsl-mode/master/glsl-mode.el
@@ -68,20 +77,24 @@
 ;;(load (concat use-of-path "/use-of-glsl-mode.el"))
 
 ;; uncomment if you have installed go-mode package grom MELPA
-;;(load (concat use-of-path "/use-of-go-mode.el"))
+(if (package-installed-p 'go-mode)
+    (load (concat use-of-path "/use-of-go-mode.el")))
 
 ;;;;;;;;;;;;;;; lsp packages
 
 ;; uncomment if you have installed lsp-mode from MELPA
 ;; it is generaly installed as a dependencies for
 ;; lsp-* packages
-;;(load (concat use-of-path "/use-of-lsp-mode.el"))
+(if (package-installed-p 'lsp-mode)
+    (load (concat use-of-path "/use-of-lsp-mode.el")))
 
 ;; uncomment if you have installed lsp-java from MELPA
-;;(load (concat use-of-path "/use-of-lsp-java.el"))
+(if (package-installed-p 'lsp-java)
+    (load (concat use-of-path "/use-of-lsp-java.el")))
 
 ;; uncomment if you have installed lsp-latex from MELPA
-;;(load (concat use-of-path "/use-of-lsp-latex.el"))
+;;(if (package-installed-p "lsp-latex")
+;;    (load (concat use-of-path "/use-of-lsp-latex.el")))
 
 ;;;;;;;;;;;;;;; Packages that I don't use anymore
 
