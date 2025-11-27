@@ -106,7 +106,7 @@
 ;;(display-graphic-p &optional DISPLAY)
 (if (display-graphic-p)
     (progn
-      ;; si fenetrer
+      ;; if windowed
       (invert-face 'default) ;; dark mode
       ;;(set-background-dark-blue)
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
@@ -117,7 +117,7 @@
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
       )
-  ;; si dans le terminal
+  ;; if in the terminal
   ;;(set-background-black)
   ;;(add-to-list 'default-frame-alist '(background-color . "#000000"))
   (require 'mouse)
@@ -139,12 +139,6 @@
 (setq font-lock-maximum-decoration t)
 (global-font-lock-mode t)
 (show-paren-mode)
-;;(add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
-;;(global-display-line-numbers-mode 1)
-;; line numbering
-(global-display-line-numbers-mode)
-;;(add-hook 'prog-mode-hook #'display-line-numbers-mode)
-;;(add-hook 'latex-mode-hook #'display-line-numbers-mode)
 
 (add-hook 'latex-mode-hook #'visual-line-mode) ;; line that break smoothly in latex-mode
 (column-number-mode t) ;; display column number bellow
@@ -156,6 +150,32 @@
 ;; enable camelCase
 ;;(add-hook 'prog-mode-hook 'subword-mode)
 (global-subword-mode 1)
+
+;;-------------------------------------
+;; Line numbering
+
+;; line numbering
+(global-display-line-numbers-mode)
+
+(defun set-numbering-relative ()
+  (interactive)
+  (setq display-line-numbers 'relative)
+  )
+
+(defun set-numbering-absolute ()
+  (interactive)
+  (setq display-line-numbers 'absolute)
+  )
+
+(global-set-key (kbd "C-c n a") 'set-numbering-absolute)
+(global-set-key (kbd "C-c n r") 'set-numbering-relative)
+
+;; Junk
+;;(add-hook 'find-file-hook (lambda () (linum-mode 1))) ;; line numbering
+;;(global-display-line-numbers-mode 1)
+;;(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+;;(add-hook 'latex-mode-hook #'display-line-numbers-mode)
+
 
 ;;-------------------------------------
 ;; Non printable character
@@ -313,7 +333,7 @@
 ;;(add-to-list 'auto-mode-alist '("\\.php\\'" . mhtml-mode))
 
 ;;-------------------------------------
-;; Bordel
+;; Junk
 
 ;;(show-paren-mode t) ;; show parenthesis mode
 ;;(setq line-number-mode t) ;; line number
