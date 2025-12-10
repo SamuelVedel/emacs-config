@@ -176,7 +176,7 @@
  t
  )
 
-;; bordel ----------------------
+;; Junk ----------------------
 ;; (defun my-latex-comment-region ()
 ;;   "Highlight text between \\begin{comment} and \\end{comment} as comments in LaTeX mode."
 ;;   (font-lock-add-keywords

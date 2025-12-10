@@ -55,7 +55,7 @@
     (load (concat use-of-path "/use-of-undo-tree.el")))
 
 ;; uncomment if you have installed wich-key package
-;; it is can be built-in on some emacs versions
+;; it is built-in on some emacs versions
 ;;(load (concat use-of-path "/use-of-which-key.el"))
 
 ;; uncomment if you have installed diff-hl package from MELPA

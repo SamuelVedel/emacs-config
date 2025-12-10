@@ -44,6 +44,7 @@
 (setq unchanged-indent-mode
       '(makefile-gmake-mode))
 
+;; Use larger tabs for asm-mode
 (add-hook 'asm-mode-hook
           (lambda()
             (setq c-basic-offset 8)
