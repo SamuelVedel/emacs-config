@@ -1,6 +1,6 @@
 # Ma config emacs
 
-Voici le code de ma config emacs
+Voici le code de ma config emacs, le README n'est pas du tout à jour.
 
 ## Que rajoute ma config
 
