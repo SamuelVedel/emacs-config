@@ -58,3 +58,12 @@
             (if (not (member major-mode unchanged-indent-mode))
                 (local-set-key (kbd "RET") 'mret)
               )))
+
+;; To be able to put braces below if/loops in C/C++
+;;(c-add-style "below-braces-style"
+;;             '("linux"
+;;               (c-basic-offset . 4)       ; set indent width (e.g. 4 spaces)
+;;               (indent-tabs-mode . nil))) ; use spaces instead of tabs
+;;
+;;(add-hook 'c-mode-hook   (lambda () (c-set-style "below-braces-style")))
+;;(add-hook 'c++-mode-hook (lambda () (c-set-style "below-braces-style")))
