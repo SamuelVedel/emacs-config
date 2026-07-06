@@ -35,7 +35,9 @@
   " Create an new line and indent this line "
   (interactive)
   (insert "\n")
-  (indent-for-tab-command)
+  (if electric-indent-mode
+      (indent-for-tab-command)
+    )
   )
 
 (set-indent-mode-tabs) ;; set the indentation with tabs
@@ -67,3 +69,7 @@
 ;;
 ;;(add-hook 'c-mode-hook   (lambda () (c-set-style "below-braces-style")))
 ;;(add-hook 'c++-mode-hook (lambda () (c-set-style "below-braces-style")))
+
+;; Just to work with Arnaud
+;;(setq-default c-basic-offset 2)
+;;(set-indent-mode-spaces)
