@@ -80,6 +80,10 @@
 (if (package-installed-p 'go-mode)
     (load (concat use-of-path "/use-of-go-mode.el")))
 
+;; uncomment if you have installed rust-mode package grom MELPA
+(if (package-installed-p 'rust-mode)
+    (load (concat use-of-path "/use-of-rust-mode.el")))
+
 ;;;;;;;;;;;;;;; lsp packages
 
 ;; uncomment if you have installed lsp-mode from MELPA
