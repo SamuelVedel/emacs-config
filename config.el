@@ -220,7 +220,8 @@
 (progn
   ;; Make whitespace-mode with very basic background coloring for whitespaces.
   ;; http://ergoemacs.org/emacs/whitespace-mode.html
-  (setq whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark )))
+  (setq whitespace-style (quote (face spaces tabs newline space-mark
+                                      tab-mark newline-mark )))
   )
 
 ;;-------------------------------------
@@ -347,6 +348,7 @@
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . js-mode))
 (add-to-list 'auto-mode-alist '("\\.ypp\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.lpp\\'" . c++-mode))
+(add-to-list 'auto-mode-alist '("\\.tex\\'" . latex-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.php\\'" . mhtml-mode))
 
 ;;-------------------------------------
