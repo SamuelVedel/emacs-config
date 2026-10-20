@@ -52,3 +52,5 @@
 (global-set-key (kbd "C-x <down>") 'windmove-down)
 
 (global-set-key (kbd "C-c e") 'electric-indent-mode)
+
+(global-set-key (kbd "C-c f") 'find-name-dired)

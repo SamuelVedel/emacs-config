@@ -269,12 +269,12 @@
   (if (eq major-mode 'c-mode)
       (progn
         (setq c-bin n-bin)
-        (message "Change the folder for binaries file in c to %s" c-bin)
+        (message "Change the folder for binaries file in C to %s" c-bin)
         )
     (if (eq major-mode 'c++-mode)
       (progn
         (setq c++-bin n-bin)
-        (message "Change the folder for binaries file in c to %s" c-bin)
+        (message "Change the folder for binaries file in C++ to %s" c++-bin)
         )
       (if (eq major-mode 'latex-mode)
           (progn

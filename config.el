@@ -24,7 +24,7 @@
 ;; uncomment if you have installed xclip.el
 ;; from https://www.emacswiki.org/emacs/xclip.el
 ;; is it for using x11 clipboard when using terminal emacs
-;;(load (concat use-of-path "/use-of-xclip.el"))
+(load (concat use-of-path "/use-of-xclip.el"))
 
 ;; uncomment if you have installed consult from MELPA
 (if (package-installed-p 'consult)
@@ -56,7 +56,7 @@
 
 ;; uncomment if you have installed wich-key package
 ;; it is built-in on some emacs versions
-;;(load (concat use-of-path "/use-of-which-key.el"))
+(load (concat use-of-path "/use-of-which-key.el"))
 
 ;; uncomment if you have installed diff-hl package from MELPA
 ;; it is to highlights uncommitted changes on the side of the window
@@ -74,7 +74,7 @@
 ;; or https://maverick.inria.fr/~Xavier.Decoret/resources/glsl-mode/glsl-mode.el
 ;; it will use and configure glsl-mode,
 ;; it's a programming language to write shaders (code that are executed on GPU)
-;;(load (concat use-of-path "/use-of-glsl-mode.el"))
+(load (concat use-of-path "/use-of-glsl-mode.el"))
 
 ;; uncomment if you have installed go-mode package grom MELPA
 (if (package-installed-p 'go-mode)
@@ -129,7 +129,7 @@
       ;;(add-to-list 'default-frame-alist '(background-color . "#171421"))
       ;;(add-hook 'prog-mode-hook #'(set-background-color "#171421"))
       ;;(add-hook 'prog-mode-hook (lambda () (set-background-color "#171421")))
-      ;;(set-frame-font "Source Code Pro 11" nil t) ;; font
+      (set-frame-font "Source Code Pro 11" nil t) ;; font
       (set-face-attribute 'default nil :height 110)
       (tool-bar-mode -1)
       (set-scroll-bar-mode 'left)
@@ -157,6 +157,7 @@
 (global-font-lock-mode t)
 (show-paren-mode)
 
+(add-hook 'prog-mode-hook #'toggle-truncate-lines)
 (add-hook 'latex-mode-hook #'visual-line-mode) ;; line that break smoothly in latex-mode
 (column-number-mode t) ;; display column number bellow
 (size-indication-mode t) ;; display buffer size bellow
@@ -173,6 +174,11 @@
 
 ;; line numbering
 (global-display-line-numbers-mode)
+
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (setq display-line-numbers 'relative)
+            ))
 
 (defun set-numbering-relative ()
   (interactive)
